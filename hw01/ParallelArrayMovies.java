@@ -1,8 +1,8 @@
 /**
  * Personal Movie Inventory System.
  *
- * @author  Your name here
- * @version date goes here
+ * @author  Kaden Turner
+ * @version 8/27/2025
  *
  * <pre>
  * This is the starter code for the parallel array version of the movie
@@ -14,7 +14,7 @@ import java.util.Scanner;
 
 public class ParallelArrayMovies
 {
-	public static final String DATAFILE= "../data/movielist.txt";
+	public static final String DATAFILE= "../data/tinymovielist.txt";
 	public static final int MAXMOVIES= 10000;
 
 	public static void main(String [] args)
