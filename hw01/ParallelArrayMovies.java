@@ -24,6 +24,8 @@ public class ParallelArrayMovies
 		String [] genres= new String[MAXMOVIES];
 		int [] years= new int[MAXMOVIES];
 		int numberOfEntries;
+      
+
 
 		numberOfEntries= loadMovies(titles,genres,years);
 		System.out.println("Number of entries read from data file: "+numberOfEntries);
@@ -140,6 +142,24 @@ public class ParallelArrayMovies
 	*/
    public static void searchByYear(String [] titles, String [] genres, int [] years, int n)
    {
-      System.out.println("Search by Year");
+      Scanner kb = new Scanner(System.in);
+      System.out.println("Enter year to search for: ");
+      int searchYear = kb.nextInt();
+      boolean found = false;  //Used to determine if there are any movies for specified search
+      
+      System.out.println("------------------------------------------------");
+		System.out.printf("%-30s %-20s %s\n","TITLE","GENRE","YEAR");
+
+		for (int i=0; i<n; i++)
+      {
+			if(years[i] == searchYear)
+         {
+            System.out.printf("%-30s %-20s %4d\n", titles[i], genres[i], years[i]);
+            found = true;
+         }
+      }
+      
+      if (!found)
+         System.out.println("No movies found for this year " + searchYear + ".");
    }
 }
