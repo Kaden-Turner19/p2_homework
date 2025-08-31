@@ -2,7 +2,7 @@
  * Personal Movie Inventory System.
  *
  * @author  Kaden Turner
- * @version 8/27/2025
+ * @version 8/31/2025
  *
  * <pre>
  * This is the starter code for the parallel array version of the movie
@@ -33,6 +33,9 @@ public class ParallelArrayMovies
 				numberOfEntries= enterMovie(titles,genres,years,numberOfEntries);
 			else if (choice==3)
 				displayAll(titles,genres,years,numberOfEntries);
+         else if (choice==6)
+            searchByYear(titles,genres,years,numberOfEntries);
+            
 		} while (choice!=0);
 
 		System.out.println("\nTHE END");
@@ -126,4 +129,17 @@ public class ParallelArrayMovies
 
 		return choice;
 	}
+   
+   /**
+	 * prompt the user to enter a year and display all movies that match the given year.
+    *
+    * @param titles array of movie titles
+	 * @param genres array of movie genres
+	 * @param years array of movie copyright dates
+    * @param n number of elements in the array
+	*/
+   public static void searchByYear(String [] titles, String [] genres, int [] years, int n)
+   {
+      System.out.println("Search by Year");
+   }
 }
