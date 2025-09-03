@@ -18,6 +18,7 @@ public class Bart2
 
 		System.out.print("Enter how many times to display message: ");
 		n= kb.nextInt();
+      kb.nextLine();
 
 		System.out.print("Enter message: ");
 		msg= kb.nextLine();
