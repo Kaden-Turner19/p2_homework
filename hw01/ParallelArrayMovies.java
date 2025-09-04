@@ -25,9 +25,20 @@ public class ParallelArrayMovies
 		int [] years= new int[MAXMOVIES];
 		int numberOfEntries;
       
+      titles[0] = "Dr. no";
+      genres[0] = "action";
+      years[0] = 1962;
+      titles[1] = "From Russia With Love";
+      genres[1] = "action";
+      years[1] = 1963;
+      titles[2] = "Goldfinger";
+      genres[2] = "action";
+      years[2] = 1964;
+      numberOfEntries = 3;
+      
 
 
-		numberOfEntries= loadMovies(titles,genres,years);
+		//numberOfEntries= loadMovies(titles,genres,years);
 		System.out.println("Number of entries read from data file: "+numberOfEntries);
 		do {
 			choice= getMenuChoice();
@@ -142,24 +153,17 @@ public class ParallelArrayMovies
 	*/
    public static void searchByYear(String [] titles, String [] genres, int [] years, int n)
    {
-      Scanner kb = new Scanner(System.in);
-      System.out.println("Enter year to search for: ");
-      int searchYear = kb.nextInt();
-      boolean found = false;  //Used to determine if there are any movies for specified search
+      Scanner scan = new Scanner(System.in);    //Declaring a new scanner for this method
+      System.out.println("Enter the year you want to search for: ");
+      int search = scan.nextInt();     //Storing user input for later search
       
       System.out.println("------------------------------------------------");
-		System.out.printf("%-30s %-20s %s\n","TITLE","GENRE","YEAR");
-
-		for (int i=0; i<n; i++)
-      {
-			if(years[i] == searchYear)
-         {
-            System.out.printf("%-30s %-20s %4d\n", titles[i], genres[i], years[i]);
-            found = true;
-         }
-      }
+      System.out.printf("%-30s %-20s %s\n","TITLE","GENRE","YEAR");     //Formatted Strings copied from the main method to preserve aesthetic
       
-      if (!found)
-         System.out.println("No movies found for this year " + searchYear + ".");
+      for(int i = 0;i < n;i++)
+      {
+         if(years[i] == search)
+            System.out.printf("%-30s %-20s %4d\n", titles[i], genres[i], years[i]);
+      }
    }
 }
