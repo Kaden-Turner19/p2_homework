@@ -24,9 +24,8 @@ public class ParallelArrayMovies
 		String [] titles= new String[MAXMOVIES];
 		String [] genres= new String[MAXMOVIES];
 		int [] years= new int[MAXMOVIES];
-		int numberOfEntries;
+      int numberOfEntries;
       
-
 
 		numberOfEntries= loadMovies(titles,genres,years);
 		System.out.println("Number of entries read from data file: "+numberOfEntries);
@@ -42,6 +41,8 @@ public class ParallelArrayMovies
 				searchByTitle(titles, genres, years, numberOfEntries);
          else if (choice==4)
             searchByGenre(titles, genres, years,numberOfEntries);
+         else if (choice==2)
+            numberOfEntries = deleteMovie(titles, genres, years, numberOfEntries);
             
 		} while (choice!=0);
 
@@ -200,13 +201,15 @@ public class ParallelArrayMovies
       searchTitle = searchTitle.toLowerCase();     //convert user input to lower case
     
       System.out.println("------------------------------------------------");
-      System.out.printf("%-30s %-20s %s\n","TITLE","GENRE","YEAR");     //formatted Strings copied from the main method to preserve aesthetic
+      System.out.printf("%-30s %-20s %-5s %s\n","TITLE","GENRE","YEAR","ID");     //formatted Strings copied from the main method to preserve aesthetic
+                                                                                  //added the ID column for the deleteMovie method
     
       for(int i = 0;i < n;i++)
 	   {
 		   if(titles[i].toLowerCase().contains(searchTitle))  //.contain will handle the partial matching if there is any
 		   {
-			   System.out.printf("%-30s %-20s %4d\n", titles[i],genres[i],years[i]);    //formatted string copied from the other methods
+			   System.out.printf("%-30s %-20s %-5d %4d\n", titles[i],genres[i],years[i],i);    //formatted string copied from the other methods
+                                                                                            //added the ID number
 		   }
 	   }      
    }
@@ -236,7 +239,40 @@ public class ParallelArrayMovies
          {
             System.out.printf("%-30s %-20s %4d\n", titles[i],genres[i],years[i]);      //formatted Strings copied from the main mehtod
          }
+      } 
+   }
+   
+   /**
+    * prompt the user to enter a title to be deleted
+    *
+    * @param titles array of movie titles
+    * @param genres array of movie genres
+    * @param years array of movie copyright dates
+    * @param n number of elements in the array
+    * @return the updated amount of movies in the array
+   */
+   public static int deleteMovie(String [] titles, String [] genres, int [] years, int n)
+   {
+      Scanner scan = new Scanner(System.in);    //declare new Scanner 
+      searchByTitle(titles, genres, years, n);     //shows available movies to delete
+      
+      System.out.println("Enter the ID number you would like to delete: ");
+      int id = scan.nextInt();      //id variable to use for deletion
+      
+      if(id < 0 || id > n)    
+      {
+         System.out.println("Invalid ID");      //if the id is out of bounds or not valid then return nothing
+         return n;
+      } 
+      
+      for(int i = id;i < n - 1;i++)
+      {
+         titles[i] = titles[i+1];
+         genres[i] = genres[i+1];      //loop through and shift the id index to the left in each array
+         years[i] = years[i+1];
       }
+      
+      return n-1;    //returns the numberOfEntries -1 if id is valid
       
    }
 }
