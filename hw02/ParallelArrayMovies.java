@@ -2,7 +2,7 @@
  * Personal Movie Inventory System.
  *
  * @author  Kaden Turner
- * @version 9/3/2025
+ * @version 9/7/2025
  *
  * <pre>
  * This is the starter code for the parallel array version of the movie
@@ -10,8 +10,8 @@
  * </pre>
 */
 
-import java.util.Scanner;
 import java.io.*;
+import java.util.Scanner;
 
 public class ParallelArrayMovies
 {
@@ -36,8 +36,11 @@ public class ParallelArrayMovies
 				numberOfEntries= enterMovie(titles,genres,years,numberOfEntries);
 			else if (choice==3)
 				displayAll(titles,genres,years,numberOfEntries);
-         else if (choice==6)
-            searchByYear(titles,genres,years,numberOfEntries);
+         	else if (choice==6)
+            	searchByYear(titles,genres,years,numberOfEntries);
+			else if (choice==5)
+				searchByTitle(titles, genres, years, numberOfEntries);
+
             
 		} while (choice!=0);
 
@@ -164,24 +167,46 @@ public class ParallelArrayMovies
 	*/
    public static void searchByYear(String [] titles, String [] genres, int [] years, int n)
    {
-      Scanner kb = new Scanner(System.in);
-      System.out.println("Enter year to search for: ");
-      int searchYear = kb.nextInt();
-      boolean found = false;  //Used to determine if there are any movies for specified search
+      Scanner scan = new Scanner(System.in);    //Declaring a new scanner for this method
+      System.out.println("Enter the year you want to search for: ");
+      int search = scan.nextInt();     //Storing user input for later search
       
       System.out.println("------------------------------------------------");
-		System.out.printf("%-30s %-20s %s\n","TITLE","GENRE","YEAR");
-
-		for (int i=0; i<n; i++)
-      {
-			if(years[i] == searchYear)
-         {
-            System.out.printf("%-30s %-20s %4d\n", titles[i], genres[i], years[i]);
-            found = true;
-         }
-      }
+      System.out.printf("%-30s %-20s %s\n","TITLE","GENRE","YEAR");     //Formatted Strings copied from the main method to preserve aesthetic
       
-      if (!found)
-         System.out.println("No movies found for this year " + searchYear + ".");
+      for(int i = 0;i < n;i++)
+      {
+         if(years[i] == search)
+            System.out.printf("%-30s %-20s %4d\n", titles[i], genres[i], years[i]);
+      }
    }
+   
+   
+  /**
+   * prompt the user to enter a title and display all movies that match the given title.
+   *
+   * @param titles array of movie titles
+   * @param genres array of movies genres
+   * @param years array of movie copyright dates
+   * @param n number of elements in the array
+  */
+  public static void searchByTitle(String [] titles, String [] genres, int [] years, int n)
+  {
+      Scanner scan = new Scanner(System.in);    //declare new Scanner
+      System.out.println("Enter title to search for: ");
+      String searchTitle = scan.nextLine();
+      
+      searchTitle = searchTitle.toLowerCase();     //convert user input to lower case
+    
+      System.out.println("------------------------------------------------");
+      System.out.printf("%-30s %-20s %s\n","TITLE","GENRE","YEAR");     //formatted Strings copied from the main method to preserve aesthetic
+    
+      for(int i = 0;i < n;i++)
+	   {
+		   if(titles[i].toLowerCase().contains(searchTitle))  //.contain will handle the partial matching if there is any
+		   {
+			   System.out.printf("%-30s %-20s %4d\n", titles[i],genres[i],years[i]);    //formatted string copied from the other methods
+		   }
+	   }      
+   } 
 }
