@@ -40,7 +40,8 @@ public class ParallelArrayMovies
             	searchByYear(titles,genres,years,numberOfEntries);
 			else if (choice==5)
 				searchByTitle(titles, genres, years, numberOfEntries);
-
+         else if (choice==4)
+            searchByGenre(titles, genres, years,numberOfEntries);
             
 		} while (choice!=0);
 
@@ -208,5 +209,34 @@ public class ParallelArrayMovies
 			   System.out.printf("%-30s %-20s %4d\n", titles[i],genres[i],years[i]);    //formatted string copied from the other methods
 		   }
 	   }      
-   } 
+   }
+   
+   /**
+    * prompt the user to enter a genre and display all movies within that genre
+    *
+    * @param titles array of movie titles
+    * @param genres array of movie genres
+    * @param years array of movie copyright dates
+    * @param n number of elements in the array
+   */
+   public static void searchByGenre(String [] titles, String [] genres, int [] years, int n)
+   {
+      Scanner scan = new Scanner(System.in);    //declare new scanner
+      System.out.println("Enter genre to search for: ");
+      String searchGenre = scan.nextLine();
+      
+      searchGenre = searchGenre.toLowerCase();     //making the search case insensitive
+      
+      System.out.println("------------------------------------------------");
+      System.out.printf("%-30s %-20s %s\n","TITLE","GENRE","YEAR");     //formatted Strings copied from the main method
+      
+      for(int i = 0;i < n;i++)
+      {
+         if(genres[i].toLowerCase().equals(searchGenre))
+         {
+            System.out.printf("%-30s %-20s %4d\n", titles[i],genres[i],years[i]);      //formatted Strings copied from the main mehtod
+         }
+      }
+      
+   }
 }
