@@ -45,7 +45,9 @@ public class ParallelArrayMovies
             numberOfEntries = deleteMovie(titles, genres, years, numberOfEntries);
             
 		} while (choice!=0);
-
+      
+      saveMovie(titles,genres,years,numberOfEntries);    //save method called after the loop has finished saving the changes made
+      
 		System.out.println("\nTHE END");
 	}
 
@@ -274,5 +276,34 @@ public class ParallelArrayMovies
       
       return n-1;    //returns the numberOfEntries -1 if id is valid
       
+   }
+   
+   /**
+    * Saves all the movies to the data file thats selected
+    *
+    * @param titles array of movie titles
+    * @param genres array of movie gernes
+    * @param years array of movie copyright dates
+    * @param n number of elements in the array
+   */
+   public static void saveMovie(String [] titles, String [] genres, int [] years, int n)
+   {
+      try
+      {
+         PrintStream outFile = new PrintStream(DATAFILE);      //declaring new PrintStream to print to the data file
+         
+         for(int i = 0;i < n;i++)
+         {
+            outFile.println(titles[i]);
+            outFile.println(genres[i]);      //loops through each entry and updates them to the file
+            outFile.println(years[i]);
+         }
+         
+         outFile.close();     //closes the PrintStream because I wasn't born in a barn :)
+      }
+      catch(IOException e)    //catches the exception so the program doesn't break
+      {
+         System.out.println("Couldn't save data to the selected file.");
+      }
    }
 }
