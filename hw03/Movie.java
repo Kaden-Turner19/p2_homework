@@ -20,4 +20,9 @@ public class Movie
       genre = g;
       year = y;
    }
+   
+   public String toString()
+   {
+      return title+" is of type "+genre+" and was made in "+year+".";
+   }
 }

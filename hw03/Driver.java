@@ -23,8 +23,6 @@ public class Driver
       */
       
       Movie homeAlone = new Movie("Home Alone", "Action", 1996);
-      System.out.println(homeAlone.title);
-      System.out.println(homeAlone.genre);
-      System.out.println(homeAlone.year);
+      System.out.println(homeAlone);
    }
 }
