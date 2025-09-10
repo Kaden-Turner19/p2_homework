@@ -21,8 +21,12 @@ public class Movie
       year = y;
    }
    
+   @override
    public String toString()
    {
-      return title+" is of type "+genre+" and was made in "+year+".";
+      String f;
+      f = String.format("%-30s %-20s %4d\n",title,genre,year);
+      
+      return f;
    }
 }
