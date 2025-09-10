@@ -712,7 +712,7 @@ Action
 The Sword
 Action
 1980
-Trois Hommes à Abattre
+Trois Hommes   Abattre
 Action
 1980
 Two Champions of Shaolin
@@ -1084,7 +1084,7 @@ Action
 Runaway Train
 Action
 1985
-Les Spécialistes
+Les Sp cialistes
 Action
 1985
 Spies Like Us
@@ -1690,7 +1690,7 @@ Action
 The Wicked City
 Action
 1992
-Acción Mutante
+Acci n Mutante
 Action
 1993
 American Ninja V
@@ -1876,7 +1876,7 @@ Action
 Hellbound
 Action
 1994
-Léon: The Professional
+L on: The Professional
 Action
 1994
 Love on Delivery
@@ -2653,7 +2653,7 @@ Action
 Returner
 Action
 2002
-La sirène rouge
+La sir ne rouge
 Action
 2002
 So Close
@@ -2965,7 +2965,7 @@ Action
 Title
 Action
 2004
-Æon Flux
+ on Flux
 Action
 2005
 Assault on Precinct 13
@@ -3112,7 +3112,7 @@ Action
 Curse of the Golden Flower
 Action
 2006
-Déjà Vu
+D j  Vu
 Action
 2006
 DOA: Dead or Alive
@@ -3322,7 +3322,7 @@ Action
 Chocolate
 Action
 2008
-Cicakman 2 – Planet Hitam
+Cicakman 2   Planet Hitam
 Action
 2008
 Connected
@@ -3676,7 +3676,7 @@ Action
 The Last Airbender
 Action
 2010
-The Legend Is Born – Ip Man
+The Legend Is Born   Ip Man
 Action
 2010
 Let the Bullets Fly
@@ -3853,7 +3853,7 @@ Action
 The Mechanic
 Action
 2011
-Mission: Impossible – Ghost Protocol
+Mission: Impossible   Ghost Protocol
 Action
 2011
 Mr. & Mrs. Incredible
@@ -4573,7 +4573,7 @@ Adventure
 Around the World in Eighty Days
 Adventure
 1956
-Les Aventures de Till L'Espiègle
+Les Aventures de Till L'Espi gle
 Adventure
 1956
 Congo Crossing
@@ -4966,10 +4966,10 @@ Adventure
 Herbie Rides Again
 Adventure
 1974
-Mais où est donc passée la septième compagnie?
+Mais o  est donc pass e la septi me compagnie?
 Adventure
 1974
-À Nous Quatre Cardinal
+  Nous Quatre Cardinal
 Adventure
 1974
 When the North Wind Blows
@@ -5032,7 +5032,7 @@ Adventure
 The Rescuers
 Adventure
 1977
-La Septième Compagnie Au Clair Du Lune
+La Septi me Compagnie Au Clair Du Lune
 Adventure
 1977
 Sinbad and the Eye of the Tiger
@@ -5095,13 +5095,13 @@ Adventure
 The Last Flight of Noah's Ark
 Adventure
 1980
-On a volé la cuisse de Jupiter
+On a vol  la cuisse de Jupiter
 Adventure
 1980
 Das Boot
 Adventure
 1981
-La Chèvre
+La Ch vre
 Adventure
 1981
 Clash of the Titans
@@ -5164,7 +5164,7 @@ Adventure
 The Flight of Dragons
 Adventure
 1982
-Les Maîtres du temps
+Les Ma tres du temps
 Adventure
 1982
 Mother Lode
@@ -5185,7 +5185,7 @@ Adventure
 Treasure of the Four Crowns
 Adventure
 1982
-Banzaï
+Banza 
 Adventure
 1983
 BMX Bandits
@@ -5194,7 +5194,7 @@ Adventure
 The Black Stallion Returns
 Adventure
 1983
-Les Compères
+Les Comp res
 Adventure
 1983
 El Norte
@@ -5284,7 +5284,7 @@ Adventure
 Burke & Wills
 Adventure
 1985
-Ça N'arrive Qu'a Moi
+ a N'arrive Qu'a Moi
 Adventure
 1985
 The Emerald Forest
@@ -6049,7 +6049,7 @@ Adventure
 Title
 Adventure
 2004
-Arsène Lupin
+Ars ne Lupin
 Adventure
 2004
 Balto III: Wings of Change
@@ -6130,7 +6130,7 @@ Adventure
 Into the Blue
 Adventure
 2005
-Kirikou et les bêtes sauvages
+Kirikou et les b tes sauvages
 Adventure
 2005
 King Kong
@@ -6250,7 +6250,7 @@ Adventure
 Title
 Adventure
 2008
-Astérix at the Olympic Games
+Ast rix at the Olympic Games
 Adventure
 2008
 Australia
@@ -6331,7 +6331,7 @@ Adventure
 Dragonball Evolution
 Adventure
 2009
-Envoyés Très Spéciaux
+Envoy s Tr s Sp ciaux
 Adventure
 2009
 Harry Potter and the Half-Blood Prince
@@ -6376,7 +6376,7 @@ Adventure
 Clash of the Titans
 Adventure
 2010
-The Extraordinary Adventures of Adèle Blanc-Sec
+The Extraordinary Adventures of Ad le Blanc-Sec
 Adventure
 2010
 The Expendables
@@ -9292,7 +9292,7 @@ Comedy
 Life Stinks
 Comedy
 1991
-The Naked Gun 2½: The Smell of Fear
+The Naked Gun 2 : The Smell of Fear
 Comedy
 1991
 Necessary Roughness
@@ -9580,7 +9580,7 @@ Comedy
 Revenge of the Nerds IV: Nerds in Love
 Comedy
 1994
-Ri¢hie Ri¢h
+Ri hie Ri h
 Comedy
 1994
 The Santa Clause
@@ -10300,7 +10300,7 @@ Comedy
 100 Girls
 Comedy
 2000
-101 Reykjavík
+101 Reykjav k
 Comedy
 2000
 102 Dalmatians
@@ -10459,7 +10459,7 @@ Comedy
 The Original Kings of Comedy
 Comedy
 2000
-La Perdición de los hombres
+La Perdici n de los hombres
 Comedy
 2000
 Ready to Rumble
@@ -10531,7 +10531,7 @@ Comedy
 The Accidental Spy
 Comedy
 2001
-Amélie
+Am lie
 Comedy
 2001
 America's Sweethearts
@@ -10819,7 +10819,7 @@ Comedy
 Tomcats
 Comedy
 2001
-Torrente 2: Misión en Marbella
+Torrente 2: Misi n en Marbella
 Comedy
 2001
 La Tour Montparnasse Infernale
@@ -10834,7 +10834,7 @@ Comedy
 Va savoir
 Comedy
 2001
-La Vérité si je mens ! 2
+La V rit  si je mens ! 2
 Comedy
 2001
 Visitor Q
@@ -10855,7 +10855,7 @@ Comedy
 What's the Worst That Could Happen?
 Comedy
 2001
-Y tu mamá también
+Y tu mam  tambi n
 Comedy
 2001
 Zoolander
@@ -11815,7 +11815,7 @@ Comedy
 Here Comes the Bride
 Comedy
 2010
-Hospitalité
+Hospitalit 
 Comedy
 2010
 Hot Tub Time Machine
@@ -12472,7 +12472,7 @@ Science Fiction
 The Power God
 Science Fiction
 1925
-Wunder Der Schöpfung
+Wunder Der Sch pfung
 Science Fiction
 1925
 Metropolis
@@ -13444,7 +13444,7 @@ Science Fiction
 Invasion of the Star Creatures
 Science Fiction
 1962
-La jetée
+La jet e
 Science Fiction
 1962
 Journey to the 7th Planet
@@ -13777,7 +13777,7 @@ Science Fiction
 Crimes of the Future
 Science Fiction
 1969
-Doppelgänger
+Doppelg nger
 Science Fiction
 1969
 The Gladiators
@@ -14725,7 +14725,7 @@ Science Fiction
 The Adventures of Buckaroo Banzai Across the 8th Dimension
 Science Fiction
 2010
-Babicky dobíjejte presne!
+Babicky dob jejte presne!
 Science Fiction
 2010
 The Brother from Another Planet
@@ -14917,7 +14917,7 @@ Science Fiction
 Ga-ga: Glory to the Heroes
 Science Fiction
 1986
-Gröna gubbar från Y.R.
+Gr na gubbar fr n Y.R.
 Science Fiction
 1986
 Howard the Duck
@@ -15034,7 +15034,7 @@ Science Fiction
 RoboCop
 Science Fiction
 1987
-Royal Space Force: The Wings of Honnêamise
+Royal Space Force: The Wings of Honn amise
 Science Fiction
 1987
 The Running Man
@@ -15145,7 +15145,7 @@ Science Fiction
 The Blood of Heroes
 Science Fiction
 1989
-Bunker Palace Hôtel
+Bunker Palace H tel
 Science Fiction
 1989
 Communion
@@ -15442,7 +15442,7 @@ Science Fiction
 Title
 Science Fiction
 1993
-Acción mutante
+Acci n mutante
 Science Fiction
 1993
 Alien Intruder
@@ -16045,7 +16045,7 @@ Science Fiction
 Replicant
 Science Fiction
 2001
-The Strange Case of Señor Computer
+The Strange Case of Se or Computer
 Science Fiction
 2001
 Vanilla Sky
@@ -16351,7 +16351,7 @@ Science Fiction
 Title
 Science Fiction
 2005
-Æon Flux
+ on Flux
 Science Fiction
 2005
 Allegro
@@ -16477,7 +16477,7 @@ Science Fiction
 Day Watch
 Science Fiction
 2006
-Déjà Vu
+D j  Vu
 Science Fiction
 2006
 Displaced
@@ -17170,7 +17170,7 @@ Science Fiction
 
 Science Fiction
 2013
-2013 • 2014 • 2015
+2013   2014   2015
 Science Fiction
 2013
 After Earth
@@ -17383,10 +17383,10 @@ Fantasy
 The Ghost of Slumber Mountain
 Fantasy
 1918
-Körkarlen
+K rkarlen
 Fantasy
 1920
-Der müde Tod
+Der m de Tod
 Fantasy
 1921
 L'Atlantide
@@ -17566,7 +17566,7 @@ Fantasy
 Heaven Can Wait
 Fantasy
 1943
-Münchhausen
+M nchhausen
 Fantasy
 1943
 The Canterville Ghost
@@ -17590,7 +17590,7 @@ Fantasy
 The Picture of Dorian Gray
 Fantasy
 1945
-Sylvie et le fantôme
+Sylvie et le fant me
 Fantasy
 1945
 A Thousand and One Nights
@@ -17650,7 +17650,7 @@ Fantasy
 Cinderella
 Fantasy
 1950
-Orphée
+Orph e
 Fantasy
 1950
 The Magic Sword (1950 film)
@@ -18049,7 +18049,7 @@ Fantasy
 Indiana Jones and the Temple of Doom
 Fantasy
 1984
-Nausicaä of the Valley of the Wind
+Nausica  of the Valley of the Wind
 Fantasy
 1984
 The Neverending Story
@@ -18655,7 +18655,7 @@ Fantasy
 The Green Mile
 Fantasy
 1999
-Pokémon: The First Movie
+Pok mon: The First Movie
 Fantasy
 1999
 
@@ -18787,7 +18787,7 @@ Fantasy
 Onmyoji
 Fantasy
 2001
-Pokémon 3: The Movie
+Pok mon 3: The Movie
 Fantasy
 2001
 Princess Arete
@@ -18841,7 +18841,7 @@ Fantasy
 Pinocchio
 Fantasy
 2002
-Pokémon 4Ever
+Pok mon 4Ever
 Fantasy
 2002
 Reign of Fire
@@ -18922,7 +18922,7 @@ Fantasy
 Pirates of the Caribbean: The Curse of the Black Pearl
 Fantasy
 2003
-Pokémon Heroes
+Pok mon Heroes
 Fantasy
 2003
 Sinbad: Legend of the Seven Seas
@@ -18970,7 +18970,7 @@ Fantasy
 Night Watch
 Fantasy
 2004
-Pokémon: Jirachi Wish Maker
+Pok mon: Jirachi Wish Maker
 Fantasy
 2004
 The Polar Express
@@ -19048,7 +19048,7 @@ Fantasy
 Nanny McPhee
 Fantasy
 2005
-Pokémon: Destiny Deoxys
+Pok mon: Destiny Deoxys
 Fantasy
 2005
 The Promise
@@ -19114,7 +19114,7 @@ Fantasy
 Pirates of the Caribbean: Dead Man's Chest
 Fantasy
 2006
-Pokémon: Lucario and the Mystery of Mew
+Pok mon: Lucario and the Mystery of Mew
 Fantasy
 2006
 The Prestige
@@ -19195,7 +19195,7 @@ Fantasy
 Pirates of the Caribbean: At World's End
 Fantasy
 2007
-Pokémon Ranger and the Temple of the Sea
+Pok mon Ranger and the Temple of the Sea
 Fantasy
 2007
 The Seeker
@@ -19288,7 +19288,7 @@ Fantasy
 The Pirates Who Don't Do Anything: A VeggieTales Movie
 Fantasy
 2008
-Pokémon: The Rise of Darkrai
+Pok mon: The Rise of Darkrai
 Fantasy
 2008
 Ponyo on the Cliff by the Sea
@@ -19351,10 +19351,10 @@ Fantasy
 Night at the Museum: Battle of the Smithsonian
 Fantasy
 2009
-Pokémon: Giratina and the Sky Warrior
+Pok mon: Giratina and the Sky Warrior
 Fantasy
 2009
-Pokémon: Arceus and the Jewel of Life
+Pok mon: Arceus and the Jewel of Life
 Fantasy
 2009
 The Princess and the Frog
@@ -19396,7 +19396,7 @@ Fantasy
 Clash of the Titans
 Fantasy
 2010
-The Extraordinary Adventures of Adèle Blanc-Sec
+The Extraordinary Adventures of Ad le Blanc-Sec
 Fantasy
 2010
 Gulliver's Travels

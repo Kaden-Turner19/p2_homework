@@ -31,3 +31,6 @@ Action
 Thunderball
 Action
 1965
+clue
+mystery
+1974

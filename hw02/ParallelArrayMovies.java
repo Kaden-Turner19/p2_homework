@@ -15,7 +15,7 @@ import java.util.Scanner;
 
 public class ParallelArrayMovies
 {
-	public static final String DATAFILE= "../data/tinymovielist.txt";
+	public static final String DATAFILE= "../data/movielist.txt";
 	public static final int MAXMOVIES= 10000;
 
 	public static void main(String [] args)
