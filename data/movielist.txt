@@ -2965,7 +2965,7 @@ Action
 Title
 Action
 2004
- on Flux
+on Flux
 Action
 2005
 Assault on Precinct 13
@@ -4969,7 +4969,7 @@ Adventure
 Mais o  est donc pass e la septi me compagnie?
 Adventure
 1974
-  Nous Quatre Cardinal
+Nous Quatre Cardinal
 Adventure
 1974
 When the North Wind Blows
@@ -5185,7 +5185,7 @@ Adventure
 Treasure of the Four Crowns
 Adventure
 1982
-Banza 
+Banza
 Adventure
 1983
 BMX Bandits
@@ -5284,7 +5284,7 @@ Adventure
 Burke & Wills
 Adventure
 1985
- a N'arrive Qu'a Moi
+a N'arrive Qu'a Moi
 Adventure
 1985
 The Emerald Forest
@@ -11815,7 +11815,7 @@ Comedy
 Here Comes the Bride
 Comedy
 2010
-Hospitalit 
+Hospitalit
 Comedy
 2010
 Hot Tub Time Machine
@@ -16351,7 +16351,7 @@ Science Fiction
 Title
 Science Fiction
 2005
- on Flux
+on Flux
 Science Fiction
 2005
 Allegro
@@ -19496,9 +19496,6 @@ Hugo
 Fantasy
 2011
 Immortals
-Fantasy
-2011
-Legend of the Millennium Dragon
 Fantasy
 2011
 Midnight in Paris

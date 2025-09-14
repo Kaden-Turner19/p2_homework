@@ -21,61 +21,55 @@ public class ArrayOfObjectMovies
 	public static void main(String [] args)
 	{
 		int choice;						 // user's selection from the menu
-      Movie[] movies = new Movie[10000];
-      int numberOfEntries;
+      Movie[] movies = new Movie[10000];     //Created a new Movie object to store all of the entries
+      int numberOfEntries;       
       
-
-		numberOfEntries= loadMovies(movies);
-		System.out.println("Number of entries read from data file: "+numberOfEntries);
+		numberOfEntries = loadMovies(movies);
+		System.out.println("Number of entries read from data file: " + numberOfEntries);
 		do {
 			choice= getMenuChoice();
-			//if (choice==1)
-				//numberOfEntries= enterMovie(titles,genres,years,numberOfEntries);
-			if (choice==3)
+         
+			if (choice==1)
+				numberOfEntries = enterMovie(movies,numberOfEntries);
+			else if (choice==3)
 				displayAll(movies,numberOfEntries);
-         /*else if (choice==6)
-            	//searchByYear(titles,genres,years,numberOfEntries);
+         else if (choice==6)
+            	searchByYear(movies,numberOfEntries);
 			else if (choice==5)
-				//searchByTitle(titles, genres, years, numberOfEntries);
+				searchByTitle(movies, numberOfEntries);
          else if (choice==4)
-            //searchByGenre(titles, genres, years,numberOfEntries);
+            searchByGenre(movies,numberOfEntries);
          else if (choice==2)
-            //numberOfEntries = deleteMovie(titles, genres, years, numberOfEntries);
-            */
-            
+            numberOfEntries = deleteMovie(movies, numberOfEntries);           
 		} while (choice!=0);
       
-      //saveMovie(titles,genres,years,numberOfEntries);    //save method called after the loop has finished saving the changes made
+      saveMovie(movies,numberOfEntries);    //save method called after the loop has finished saving the changes made
       
 		System.out.println("\nTHE END");
 	}
 
-
 	/**
 	 * Allow user to enter a new movie.
 	 *
-	 * @param titles array of movie titles
-	 * @param genres array of movie genres
-	 * @param years array of movie copyright dates
+	 * @param movie Array of Movie objects
 	 * @param n the actual number of movies currently in the array
 	 * @return the new movie count
 	*/
-	public static int enterMovie(String [] titles, String [] genres, int [] years, int n)
+	public static int enterMovie(Movie[] movie, int n)
 	{
 		Scanner kb= new Scanner(System.in);
 		System.out.print("Enter movie title : ");
-		titles[n]= kb.nextLine();
+		String title = kb.nextLine();
 		System.out.print("Enter movie genre: ");
-		genres[n]= kb.nextLine();
+		String genre = kb.nextLine();
 		System.out.print("Enter year of movie: ");
-		years[n]= kb.nextInt();
+		int year = kb.nextInt();
 		kb.nextLine();
+      
+      movie[n] = new Movie(title, genre, year);
 
 		return n+1;
 	}
-
-
-
 
 	/**
 	 * Load movies from the data file into the arrays
@@ -85,15 +79,6 @@ public class ArrayOfObjectMovies
 	*/
 	public static int loadMovies(Movie[] movie)
 	{
-     movie[0] = new Movie("Up", "Animation", 2005);
-     movie[1] = new Movie("Van Helsing", "Action", 2004);
-     movie[2] = new Movie("Walking Tall", "Action", 2004);
-     movie[3] = new Movie("Black Dawn", "Action", 2005);
-     movie[4] = new Movie("DeadPool", "Action", 2016);
-     return 5;
-     
-   
-      /*
       int count = 0;       //Count variable to return, will hold the number of movies added
       
       try{
@@ -101,11 +86,12 @@ public class ArrayOfObjectMovies
          
          while(scan.hasNextLine())
          {
-            titles[count] = scan.nextLine().trim();
-            genres[count] = scan.nextLine().trim();
-            years[count] = scan.nextInt();
+            String title = scan.nextLine().trim();
+            String genre = scan.nextLine().trim();
+            int year = scan.nextInt();
             scan.nextLine();     //Used to obtain the leftover newline
             
+            movie[count] = new Movie(title,genre,year);
             count++;
          }
          
@@ -116,10 +102,7 @@ public class ArrayOfObjectMovies
       }
 
 		return count;
-      */
 	}
-
-
 
 	/**
 	 * Displays all movie information.
@@ -129,20 +112,15 @@ public class ArrayOfObjectMovies
 	*/
 	public static void displayAll(Movie[] movie, int n)
 	{
-      for(int i =0;i<n;i++)
-      {
-         System.out.println(movie[i]);
-      }
-   
-      /*
 		int i;
 		System.out.println("------------------------------------------------");
 		System.out.printf("%-30s %-20s %s\n","TITLE","GENRE","YEAR");
+      
 		for (i=0; i<n; i++)
-			System.out.printf("%-30s %-20s %4d\n",titles[i],genres[i],years[i]);
-      */
+      {
+			System.out.print(movie[i]);
+      }
 	}
-
 
 	/**
 	 * Displays menu and get's user's selection
@@ -176,12 +154,10 @@ public class ArrayOfObjectMovies
    /**
 	 * prompt the user to enter a year and display all movies that match the given year.
     *
-    * @param titles array of movie titles
-	 * @param genres array of movie genres
-	 * @param years array of movie copyright dates
+	 * @param movie Array of Movie Objects
     * @param n number of elements in the array
 	*/
-   public static void searchByYear(String [] titles, String [] genres, int [] years, int n)
+   public static void searchByYear(Movie[] movie, int n)
    {
       Scanner scan = new Scanner(System.in);    //Declaring a new scanner for this method
       System.out.println("Enter the year you want to search for: ");
@@ -192,21 +168,18 @@ public class ArrayOfObjectMovies
       
       for(int i = 0;i < n;i++)
       {
-         if(years[i] == search)
-            System.out.printf("%-30s %-20s %4d\n", titles[i], genres[i], years[i]);
+         if(movie[i].getYear() == search)
+            System.out.printf("%-30s %-20s %4d\n", movie[i].getTitle(), movie[i].getGenre(), movie[i].getYear());
       }
    }
-   
    
   /**
    * prompt the user to enter a title and display all movies that match the given title.
    *
-   * @param titles array of movie titles
-   * @param genres array of movies genres
-   * @param years array of movie copyright dates
+	* @param movie Array of Movie Objects
    * @param n number of elements in the array
   */
-  public static void searchByTitle(String [] titles, String [] genres, int [] years, int n)
+  public static void searchByTitle(Movie[] movie, int n)
   {
       Scanner scan = new Scanner(System.in);    //declare new Scanner
       System.out.println("Enter title to search for: ");
@@ -220,9 +193,9 @@ public class ArrayOfObjectMovies
     
       for(int i = 0;i < n;i++)
 	   {
-		   if(titles[i].toLowerCase().contains(searchTitle))  //.contain will handle the partial matching if there is any
+		   if(movie[i].getTitle().toLowerCase().contains(searchTitle))  //.contain will handle the partial matching if there is any
 		   {
-			   System.out.printf("%-30s %-20s %-5d %4d\n", titles[i],genres[i],years[i],i);    //formatted string copied from the other methods
+			   System.out.printf("%-30s %-20s %-5d %4d\n",movie[i].getTitle(),movie[i].getGenre(),movie[i].getYear(),i);    //formatted string copied from the other methods
                                                                                             //added the ID number
 		   }
 	   }      
@@ -231,12 +204,10 @@ public class ArrayOfObjectMovies
    /**
     * prompt the user to enter a genre and display all movies within that genre
     *
-    * @param titles array of movie titles
-    * @param genres array of movie genres
-    * @param years array of movie copyright dates
+    * @param movie Array of Movie Objects
     * @param n number of elements in the array
    */
-   public static void searchByGenre(String [] titles, String [] genres, int [] years, int n)
+   public static void searchByGenre(Movie[] movie, int n)
    {
       Scanner scan = new Scanner(System.in);    //declare new scanner
       System.out.println("Enter genre to search for: ");
@@ -249,9 +220,9 @@ public class ArrayOfObjectMovies
       
       for(int i = 0;i < n;i++)
       {
-         if(genres[i].toLowerCase().equals(searchGenre))
+         if(movie[i].getGenre().toLowerCase().equals(searchGenre))
          {
-            System.out.printf("%-30s %-20s %4d\n", titles[i],genres[i],years[i]);      //formatted Strings copied from the main mehtod
+            System.out.print(movie[i]);      //formatted Strings copied from the main mehtod
          }
       } 
    }
@@ -259,16 +230,15 @@ public class ArrayOfObjectMovies
    /**
     * prompt the user to enter a title to be deleted
     *
-    * @param titles array of movie titles
-    * @param genres array of movie genres
-    * @param years array of movie copyright dates
+    * @param movie Array of Movie Objects
     * @param n number of elements in the array
     * @return the updated amount of movies in the array
    */
-   public static int deleteMovie(String [] titles, String [] genres, int [] years, int n)
+   public static int deleteMovie(Movie[] movie, int n)
    {
+      
       Scanner scan = new Scanner(System.in);    //declare new Scanner 
-      searchByTitle(titles, genres, years, n);     //shows available movies to delete
+      searchByTitle(movie, n);     //shows available movies to delete
       
       System.out.println("Enter the ID number you would like to delete: ");
       int id = scan.nextInt();      //id variable to use for deletion
@@ -281,24 +251,20 @@ public class ArrayOfObjectMovies
       
       for(int i = id;i < n - 1;i++)
       {
-         titles[i] = titles[i+1];
-         genres[i] = genres[i+1];      //loop through and shift the id index to the left in each array
-         years[i] = years[i+1];
+         movie[i] = movie[i+1];
       }
       
       return n-1;    //returns the numberOfEntries -1 if id is valid
       
    }
-   
+
    /**
     * Saves all the movies to the data file thats selected
     *
-    * @param titles array of movie titles
-    * @param genres array of movie gernes
-    * @param years array of movie copyright dates
+    * @param movie Array of Movie Objects
     * @param n number of elements in the array
    */
-   public static void saveMovie(String [] titles, String [] genres, int [] years, int n)
+   public static void saveMovie(Movie[] movie, int n)
    {
       try
       {
@@ -306,9 +272,9 @@ public class ArrayOfObjectMovies
          
          for(int i = 0;i < n;i++)
          {
-            outFile.println(titles[i]);
-            outFile.println(genres[i]);      //loops through each entry and updates them to the file
-            outFile.println(years[i]);
+            outFile.println(movie[i].getTitle());
+            outFile.println(movie[i].getGenre());      //loops through each entry and updates them to the file
+            outFile.println(movie[i].getYear());
          }
          
          outFile.close();     //closes the PrintStream because I wasn't born in a barn :)

@@ -28,4 +28,17 @@ public class Movie
       
       return f;
    }
+   
+   public String getTitle()      //we must add a new constructor to obtain each parameter
+   {
+      return title;
+   }
+   public String getGenre()      //Constructor for the genre parameter
+   {
+      return genre;
+   }
+   public int getYear()       //constructor for the year parameter
+   {
+      return year;
+   }
 }
