@@ -14,5 +14,10 @@ public class Driver
    {
    MovieContainer mc = new MovieContainer();
    mc.display();
+   
+   mc.insert("Kaden","Action",2005);
+   mc.insert("Kaden1","Action",2006);
+   mc.insert("Kaden2","Action",2007);
+   mc.display();
    }
 }

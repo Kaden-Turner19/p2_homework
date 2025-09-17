@@ -16,10 +16,10 @@ import java.util.Scanner;
 public class MovieContainer
 {
 	private static final String DATAFILE= "../data/movielist.txt";
-   private static int numMovies;                         //Created a new variable to hold the number of movies
-   private static Movie[] movies = new Movie[10000];     //Created a new Movie array with 10000 slots
+   private int numMovies = 0;                         //Created a new variable to hold the number of movies
+   private Movie[] movies = new Movie[10000];     //Created a new Movie array with 10000 slots
    
-	public static final int MAXMOVIES= 10000;
+	public static final int MAXMOVIES = 10000;
 
 	public static void main(String [] args)
 	{
@@ -55,27 +55,18 @@ public class MovieContainer
 	/**
 	 * Allow user to enter a new movie.
 	 *
-	 * @param movie Array of Movie objects
-	 * @param n the actual number of movies currently in the array
+	 * @param t new title of the movie added
+	 * @param g new genre of the movie added
+    * @param y new year of the movie added
 	 * @return the new movie count
 	*/
-   /*
-	public static int enterMovie(Movie[] movie, int n)
+	public int insert(String t, String g, int y)
 	{
-		Scanner kb= new Scanner(System.in);
-		System.out.print("Enter movie title : ");
-		String title = kb.nextLine();
-		System.out.print("Enter movie genre: ");
-		String genre = kb.nextLine();
-		System.out.print("Enter year of movie: ");
-		int year = kb.nextInt();
-		kb.nextLine();
+      movies[numMovies] = new Movie(t, g, y);
       
-      movie[n] = new Movie(title, genre, year);
-
-		return n+1;
+      numMovies++;
+		return numMovies;
 	}
-   */
    
 	/**
 	 * Load movies from the data file into the arrays

@@ -17,8 +17,8 @@ public class Movie
    public Movie(String title, String g, int y)
    {
       this.title = title;
-      genre = g;
-      year = y;
+      this.genre = g;
+      this.year = y;
    }
    
    public String toString()
