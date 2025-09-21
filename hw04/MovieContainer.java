@@ -29,22 +29,6 @@ public class MovieContainer
 		//numberOfEntries = loadMovies(movies);
 		//System.out.println("Number of entries read from data file: " + numberOfEntries);
       /*
-		do {
-			choice= getMenuChoice();
-         
-			if (choice==1)
-				numberOfEntries = enterMovie(movies,numberOfEntries);
-			else if (choice==3)
-				display();
-         else if (choice==6)
-            	searchByYear(movies,numberOfEntries);
-			else if (choice==5)
-				searchByTitle(movies, numberOfEntries);
-         else if (choice==4)
-            searchByGenre(movies,numberOfEntries);
-         else if (choice==2)
-            numberOfEntries = deleteMovie(movies, numberOfEntries);           
-		} while (choice!=0);
       
       saveMovie(movies,numberOfEntries);    //save method called after the loop has finished saving the changes made
       
@@ -75,7 +59,7 @@ public class MovieContainer
 	 * @return the actual number of movies loaded into the arrays
 	*/
    /*
-	public static int loadMovies(Movie[] movie)
+	public static int loadMovies(Movie[] movies)
 	{
       int count = 0;       //Count variable to return, will hold the number of movies added
       
@@ -89,7 +73,7 @@ public class MovieContainer
             int year = scan.nextInt();
             scan.nextLine();     //Used to obtain the leftover newline
             
-            movie[count] = new Movie(title,genre,year);
+            movies[count] = new Movie(title,genre,year);
             count++;
          }
          
@@ -102,7 +86,6 @@ public class MovieContainer
 		return count;
 	}
    */
-
 	/**
 	 * Displays all movie information.
 	*/
@@ -120,56 +103,42 @@ public class MovieContainer
    /**
 	 * prompt the user to enter a year and display all movies that match the given year.
     *
-	 * @param movie Array of Movie Objects
     * @param n number of elements in the array
 	*/
-   /*
-   public static void searchByYear(Movie[] movie, int n)
-   {
-      Scanner scan = new Scanner(System.in);    //Declaring a new scanner for this method
-      System.out.println("Enter the year you want to search for: ");
-      int search = scan.nextInt();     //Storing user input for later search
-      
+   public void searchByYear(int n)
+   {    
       System.out.println("------------------------------------------------");
       System.out.printf("%-30s %-20s %s\n","TITLE","GENRE","YEAR");     //Formatted Strings copied from the main method to preserve aesthetic
       
-      for(int i = 0;i < n;i++)
+      for(int i = 0;i < numMovies;i++)
       {
-         if(movie[i].getYear() == search)
-            System.out.printf("%-30s %-20s %4d\n", movie[i].getTitle(), movie[i].getGenre(), movie[i].getYear());
+         if(movies[i].getYear() == n)
+            System.out.printf("%-30s %-20s %4d\n", movies[i].getTitle(), movies[i].getGenre(), movies[i].getYear());
       }
    }
-   */
    
   /**
    * prompt the user to enter a title and display all movies that match the given title.
    *
-	* @param movie Array of Movie Objects
-   * @param n number of elements in the array
+   * @param t Title to search for
   */
-  /*
-  public static void searchByTitle(Movie[] movie, int n)
-  {
-      Scanner scan = new Scanner(System.in);    //declare new Scanner
-      System.out.println("Enter title to search for: ");
-      String searchTitle = scan.nextLine();
-      
-      searchTitle = searchTitle.toLowerCase();     //convert user input to lower case
+  public void searchByTitle(String t)
+  {      
+      t = t.toLowerCase();     //convert user input to lower case
     
       System.out.println("------------------------------------------------");
       System.out.printf("%-30s %-20s %-5s %s\n","TITLE","GENRE","YEAR","ID");     //formatted Strings copied from the main method to preserve aesthetic
                                                                                   //added the ID column for the deleteMovie method
     
-      for(int i = 0;i < n;i++)
+      for(int i = 0;i < numMovies;i++)
 	   {
-		   if(movie[i].getTitle().toLowerCase().contains(searchTitle))  //.contain will handle the partial matching if there is any
+		   if(movies[i].getTitle().toLowerCase().contains(t))  //.contain will handle the partial matching if there is any
 		   {
-			   System.out.printf("%-30s %-20s %-5d %4d\n",movie[i].getTitle(),movie[i].getGenre(),movie[i].getYear(),i);    //formatted string copied from the other methods
+			   System.out.printf("%-30s %-20s %-5d %4d\n",movies[i].getTitle(),movies[i].getGenre(),movies[i].getYear(),i);    //formatted string copied from the other methods
                                                                                             //added the ID number
 		   }
 	   }      
    }
-   */
    
    /**
     * prompt the user to enter a genre and display all movies within that genre
@@ -177,27 +146,21 @@ public class MovieContainer
     * @param movie Array of Movie Objects
     * @param n number of elements in the array
    */
-   /*
-   public static void searchByGenre(Movie[] movie, int n)
-   {
-      Scanner scan = new Scanner(System.in);    //declare new scanner
-      System.out.println("Enter genre to search for: ");
-      String searchGenre = scan.nextLine();
-      
-      searchGenre = searchGenre.toLowerCase();     //making the search case insensitive
+   public void searchByGenre(String g)
+   {  
+      g = g.toLowerCase();     //making the search case insensitive
       
       System.out.println("------------------------------------------------");
       System.out.printf("%-30s %-20s %s\n","TITLE","GENRE","YEAR");     //formatted Strings copied from the main method
       
-      for(int i = 0;i < n;i++)
+      for(int i = 0;i < numMovies;i++)
       {
-         if(movie[i].getGenre().toLowerCase().equals(searchGenre))
+         if(movies[i].getGenre().toLowerCase().equals(g))
          {
-            System.out.print(movie[i]);      //formatted Strings copied from the main mehtod
+            System.out.print(movies[i]);      //formatted Strings copied from the main mehtod
          }
       } 
    }
-   */
    
    /**
     * prompt the user to enter a title to be deleted
