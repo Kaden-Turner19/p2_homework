@@ -25,5 +25,10 @@ public class Driver
    mc.searchByTitle("hello");
    mc.searchByGenre("Action");
    mc.searchByGenre("Suspense");
+   mc.display();
+   mc.remove(3);
+   mc.display();
+   mc.save();
+   mc.size();
    }
 }
