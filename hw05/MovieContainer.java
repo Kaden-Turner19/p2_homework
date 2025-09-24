@@ -83,11 +83,7 @@ public class MovieContainer
     
       for(int i = 0;i < numMovies;i++)
 	   {
-		   if(movies[i].getTitle().toLowerCase().contains(t))  //.contain will handle the partial matching if there is any
-		   {
-			   System.out.printf("%-30s %-20s %-5d %4d\n",movies[i].getTitle(),movies[i].getGenre(),movies[i].getYear(),i);    //formatted string copied from the other methods
-                                                                                            //added the ID number
-		   }
+         movies[i].matchesTitle(t);
 	   }      
    }
    

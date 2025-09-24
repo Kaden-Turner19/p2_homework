@@ -32,18 +32,49 @@ public class Movie
       return f;
    }
    
+  /*
+   * Getter for the attribute title
+  */
    public String getTitle()      //we must add a new constructor to obtain each parameter
    {
       return title;
    }
+   
+  /*
+   * Getter for the attribute genre
+  */
    public String getGenre()      //Constructor for the genre parameter
    {
       return genre;
    }
+   
+  /*
+   * Getter for the attribute year
+  */
    public int getYear()       //constructor for the year parameter
    {
       return year;
    }
+   
+   /*
+    * compares two strings titles to address if they match
+    *
+    * @param search String used to hold the search wanted
+    * @return whether there is a partial match
+   */
+   public boolean matchesTitle(String search)
+   {
+      if(this.title.toLowerCase().contains(search))
+      {
+         System.out.printf("%-30s %-20s %-5d\n",this.title,this.genre,this.year);    //formatted string copied from the other methods
+         return true;
+      }
+      else
+      {
+         return false;
+      }
+   }
+   
    /*
     * prints the attributes of this class to the desired data file
     *
