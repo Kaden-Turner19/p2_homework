@@ -165,4 +165,38 @@ public class MovieContainer
          System.out.println("Couldn't save data to the selected file.");
       }
    }
+   
+   /*
+    * reads from the data file into the container
+    *
+    * @param dataFile directory of the file that we want to read
+   */
+   public MovieContainer(String dataFile)
+   {
+      int count = 0;
+      
+      try
+      {
+         Scanner outFile = new Scanner(new File(dataFile));      //declaring new PrintStream to print to the data file
+         
+         while(outFile.hasNextLine())
+         {
+            String title = outFile.nextLine().trim();
+            String genre = outFile.nextLine().trim();
+            int year = outFile.nextInt();
+            outFile.nextLine();     //Used to obtain the leftover newline
+            
+            movies[count] = new Movie(title, genre, year);
+            count++;
+         }
+         
+         numMovies = count;
+         outFile.close();
+         
+      }
+      catch(IOException e)    //catches the exception so the program doesn't break
+      {
+         System.out.println("Couldn't save data to the selected file.");
+      }
+   }
 }

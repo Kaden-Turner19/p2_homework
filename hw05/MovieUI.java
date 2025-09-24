@@ -2,7 +2,7 @@
  * Personal Movie Inventory System.
  *
  * @author  Kaden Turner
- * @version 9/7/2025
+ * @version 9/24/2025
  *
  * <pre>
  * This is the starter code for the parallel array version of the movie
