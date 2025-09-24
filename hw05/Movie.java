@@ -8,6 +8,9 @@
  * This is the beginning of hw03
  * </pre>
 */
+
+import java.io.*;
+
 public class Movie
 {
    private String title;
@@ -40,5 +43,16 @@ public class Movie
    public int getYear()       //constructor for the year parameter
    {
       return year;
+   }
+   /*
+    * prints the attributes of this class to the desired data file
+    *
+    * @param outFile a PrintStream object to print the attributes to
+   */
+   public void writeToFile(PrintStream outFile)
+   {
+      outFile.println(this.title);
+      outFile.println(this.genre);      //Prints each attribute to the PrintStream
+      outFile.println(this.year);
    }
 }

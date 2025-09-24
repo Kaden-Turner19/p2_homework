@@ -158,12 +158,11 @@ public class MovieContainer
          
          for(int i = 0;i < numMovies;i++)
          {
-            outFile.println(movies[i].getTitle());
-            outFile.println(movies[i].getGenre());      //loops through each entry and updates them to the file
-            outFile.println(movies[i].getYear());
+            movies[i].writeToFile(outFile);
          }
          
-         outFile.close();     //closes the PrintStream because I wasn't born in a barn :)
+         outFile.close();
+         
       }
       catch(IOException e)    //catches the exception so the program doesn't break
       {
