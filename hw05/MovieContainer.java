@@ -15,7 +15,7 @@ import java.util.Scanner;
 
 public class MovieContainer
 {
-	private static final String DATAFILE= "../data/movielist.txt";
+	private String dataFile;
    private int numMovies = 0;                         //Created a new variable to hold the number of movies
    private Movie[] movies = new Movie[10000];     //Created a new Movie array with 10000 slots
    
@@ -150,7 +150,7 @@ public class MovieContainer
    {
       try
       {
-         PrintStream outFile = new PrintStream(DATAFILE);      //declaring new PrintStream to print to the data file
+         PrintStream outFile = new PrintStream(dataFile);      //declaring new PrintStream to print to the data file
          
          for(int i = 0;i < numMovies;i++)
          {
@@ -173,6 +173,10 @@ public class MovieContainer
    */
    public MovieContainer(String dataFile)
    {
+      this.dataFile = dataFile;
+      this.numMovies = 0;
+      this.movies = new Movie[10000];
+      
       int count = 0;
       
       try

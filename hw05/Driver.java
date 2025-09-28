@@ -9,12 +9,10 @@
  * </pre>
 */
 public class Driver
-{
-   private static final String DATAFILE= "../data/movielist.txt";
-      
+{     
    public static void main(String [] args)
    {
-   MovieContainer mc = new MovieContainer(DATAFILE);
+   MovieContainer mc = new MovieContainer("../data/movielist.txt");
    mc.display();
    
    mc.insert("Kaden","Action",2005);
