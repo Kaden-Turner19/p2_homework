@@ -54,6 +54,7 @@ public class  MovieUI
       
 		System.out.println("\nTHE END");
 
+      mc.save();
    }
    
 	/**
@@ -95,6 +96,7 @@ public class  MovieUI
 		do {
 			System.out.print("Your choice: ");
 			choice= kb.nextInt();
+         kb.nextLine();
 		} while (choice < 0 || choice > 6);
 
 		return choice;
