@@ -129,8 +129,9 @@ public class  MovieUI
    */
    public void searchByGenre()
    {
+      String searchGenre;
       System.out.println("Enter genre to search for: ");
-      String searchGenre = kb.nextLine();
+      searchGenre = kb.nextLine();
       mc.searchByGenre(searchGenre);
    }
    
