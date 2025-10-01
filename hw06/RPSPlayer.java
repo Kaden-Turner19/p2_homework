@@ -11,9 +11,9 @@ import java.util.Scanner;
 
 public class RPSPlayer
 {
-   private String name; // player's name
-	private int wins;    // number of wins since last reset
-	private int losses;  // number of losses since last reset
+   protected String name; // player's name
+	protected int wins;    // number of wins since last reset
+	protected int losses;  // number of losses since last reset
    
    public RPSPlayer(String name)
    {
@@ -72,7 +72,6 @@ public class RPSPlayer
 	{
 		System.out.printf("%-15s: %2d-%2d\n",name,wins,losses);
 	}
-
    
 	/**
 	 * Converts a pose code into the appropriate string.

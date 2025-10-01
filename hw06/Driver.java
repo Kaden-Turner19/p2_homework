@@ -4,15 +4,14 @@ public class Driver
 {
 	public static void main(String [] args)
 	{
-		ComputerRPSPlayer a;
-      HumanRPSPlayer b;
+		ComputerRPSPlayer a, b;
       
       int oldScoreA = 0;
       int oldScoreB = 0;
       int count = 5;
       
 		a= new ComputerRPSPlayer("George");
-		b= new HumanRPSPlayer("Mary");
+		b= new ComputerRPSPlayer("Mary");
 
 		System.out.println("0 is the code for "+ComputerRPSPlayer.translate(0));
 		System.out.println("1 is the code for "+ComputerRPSPlayer.translate(1));
