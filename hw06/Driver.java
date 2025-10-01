@@ -5,6 +5,10 @@ public class Driver
 	public static void main(String [] args)
 	{
 		ComputerRPSPlayer a,b;
+      int oldScoreA = 0;
+      int oldScoreB = 0;
+      int count = 5;
+      
 		a= new ComputerRPSPlayer("George");
 		b= new ComputerRPSPlayer("Mary");
 
@@ -13,8 +17,31 @@ public class Driver
 		System.out.println("2 is the code for "+ComputerRPSPlayer.translate(2));
 		System.out.println("3 is the code for "+ComputerRPSPlayer.translate(3));
 		System.out.println("---------------------------------");
-
-		a.fight(b);
+      
+      for(int i = 0;i<count;i++)
+      {
+         a.fight(b);
+         
+         if(a.getWins() == oldScoreA && b.getWins() == oldScoreB)
+         {
+            count++;
+         }
+         else if(a.getWins() == 3)
+         {
+            System.out.println(a + " is the Winner!");
+            break;
+         }
+         
+         else if(b.getWins() == 3)
+         {
+            System.out.println(b + " is the Winner!");
+            break;
+         }
+         
+         oldScoreA = a.getWins();
+         oldScoreB = b.getWins();
+         
+      }
 	}
 }
 
