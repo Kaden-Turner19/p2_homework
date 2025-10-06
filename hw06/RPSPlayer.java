@@ -9,7 +9,7 @@
 
 import java.util.Scanner;
 
-public class RPSPlayer
+public abstract class RPSPlayer
 {
    protected String name; // player's name
 	protected int wins;    // number of wins since last reset
@@ -18,7 +18,7 @@ public class RPSPlayer
    public RPSPlayer(String name)
    {
       this.name = name;
-      wins= losses= 0;
+      wins = losses = 0;
    }
    
   /**
@@ -26,10 +26,7 @@ public class RPSPlayer
    *
    * @return The code for the pose (0=Rock, 1=Paper, 2=Scissors)
   */ 
-	public int pose()
-	{
-      return -1;
-	}
+	public abstract int pose();
    
    /**
 	 * @return name of the player
@@ -91,25 +88,32 @@ public class RPSPlayer
    
    public void fight(RPSPlayer other)
    {
-      int me = this.pose();
-      int them = other.pose();
-
-      System.out.println(name + " throws " + translate(me) + " ...");
-      System.out.println(other.name + " throws " + translate(them) + " ...");
-
-      if (me == them)
-         System.out.println("Tie!");
-      else if (them == (me + 1) % 3)
-      {
-         System.out.println(other.name + " wins!");
-         this.losses++;
-         other.wins++;
-      } 
-      else
-      {
+      int me, them;
+      
+      do {
+         me = this.pose();
+         them = other.pose();
+         
+         System.out.println(name + " throws " + translate(me) + " ...");
+         System.out.println(other.name + " throws " + translate(them) + " ...");
+         
+         if (me == them)
+         {   
+            System.out.println("Tie!");  
+         }  
+         else if (them == (me + 1) % 3)
+         {
+            System.out.println(other.name + " wins!");
+            this.losses++;
+            other.wins++;
+         } 
+         else
+         {
          System.out.println(this.name + " wins!");
          this.wins++;
          other.losses++;
+         }
       }
+      while (me == them);
    }
 }  

@@ -1,49 +1,26 @@
-import java.util.Scanner;
-
 public class Driver
 {
-	public static void main(String [] args)
-	{
-		ComputerRPSPlayer a;
-      HumanRPSPlayer b;
-      
-      int oldScoreA = 0;
-      int oldScoreB = 0;
-      int count = 5;
-      
-		a= new ComputerRPSPlayer("George");
-		b= new HumanRPSPlayer("Kaden");
+    public static void main(String[] args)
+    {
+        RPSPlayerContainer container = new RPSPlayerContainer();
 
-		System.out.println("0 is the code for "+ComputerRPSPlayer.translate(0));
-		System.out.println("1 is the code for "+ComputerRPSPlayer.translate(1));
-		System.out.println("2 is the code for "+ComputerRPSPlayer.translate(2));
-		System.out.println("3 is the code for "+ComputerRPSPlayer.translate(3));
-		System.out.println("---------------------------------");
-      
-      for(int i = 0;i<count;i++)
-      {
-         b.fight(a);
-         
-         if(a.getWins() == oldScoreA && b.getWins() == oldScoreB)
-         {
-            count++;
-         }
-         else if(a.getWins() == 3)
-         {
-            System.out.println(a + " is the Winner!");
-            break;
-         }
-         
-         else if(b.getWins() == 3)
-         {
-            System.out.println(b + " is the Winner!");
-            break;
-         }
-         
-         oldScoreA = a.getWins();
-         oldScoreB = b.getWins();
-         
-      }
-	}
+        RPSPlayer a = new ComputerRPSPlayer("CPU_1");
+        RPSPlayer b = new HumanRPSPlayer("Kaden");
+        RPSPlayer c = new ComputerRPSPlayer("CPU_2");
+
+        //add to container
+        container.add(a);
+        container.add(b);
+        container.add(c);
+
+        //display container
+        container.display();
+
+        //human vs computer
+        System.out.println("Let's play a match between " + b.getName() + " and " + a.getName() + "\n");
+        b.fight(a);
+
+        //show updated results
+        container.display();
+    }
 }
-
