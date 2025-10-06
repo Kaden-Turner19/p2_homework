@@ -4,14 +4,15 @@ public class Driver
 {
 	public static void main(String [] args)
 	{
-		ComputerRPSPlayer a, b;
+		ComputerRPSPlayer a;
+      HumanRPSPlayer b;
       
       int oldScoreA = 0;
       int oldScoreB = 0;
       int count = 5;
       
 		a= new ComputerRPSPlayer("George");
-		b= new ComputerRPSPlayer("Mary");
+		b= new HumanRPSPlayer("Kaden");
 
 		System.out.println("0 is the code for "+ComputerRPSPlayer.translate(0));
 		System.out.println("1 is the code for "+ComputerRPSPlayer.translate(1));
@@ -21,7 +22,7 @@ public class Driver
       
       for(int i = 0;i<count;i++)
       {
-         a.fight(b);
+         b.fight(a);
          
          if(a.getWins() == oldScoreA && b.getWins() == oldScoreB)
          {

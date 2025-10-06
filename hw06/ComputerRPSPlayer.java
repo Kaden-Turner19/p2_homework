@@ -25,42 +25,4 @@ public class ComputerRPSPlayer extends RPSPlayer
 	{
 		return (int) (Math.random()*3.0);
 	}
-   
-   /**
-	 * Have this player take on another player showing results and updating
-	 * win/loss records for each player.
-	 */
-	public void fight(ComputerRPSPlayer other)
-	{
-		int me,them;
-
-		// get poses
-		me= this.pose();
-		them= other.pose();
-
-		// announce poses
-		System.out.println(name+" throws "+translate(me)+" ...");
-		System.out.println(other.name+" throws "+translate(them)+" ...");
-
-		// announce winner and update win/loss records
-		if (me==them)
-			System.out.println("Tie!");
-		else
-		{
-			if (them==(me+1)%3)
-			{
-				System.out.println(other.name+" wins!");
-				this.losses++;
-				other.wins++;
-			}
-			else
-			{
-				System.out.println(this.name+" wins!");
-				this.wins++;
-				other.losses++;
-			}
-		}
-	}
-
-
 }

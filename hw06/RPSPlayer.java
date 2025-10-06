@@ -25,12 +25,11 @@ public class RPSPlayer
    * Computer player choose pose randomly.
    *
    * @return The code for the pose (0=Rock, 1=Paper, 2=Scissors)
-   
-  */
-	/*public int pose()
+  */ 
+	public int pose()
 	{
+      return -1;
 	}
-   */
    
    /**
 	 * @return name of the player
@@ -38,6 +37,7 @@ public class RPSPlayer
 	public String toString()
 	{
 		return name;
+      
 	}
    
 	/**
@@ -89,5 +89,27 @@ public class RPSPlayer
 		}
 	}
    
+   public void fight(RPSPlayer other)
+   {
+      int me = this.pose();
+      int them = other.pose();
 
-}
+      System.out.println(name + " throws " + translate(me) + " ...");
+      System.out.println(other.name + " throws " + translate(them) + " ...");
+
+      if (me == them)
+         System.out.println("Tie!");
+      else if (them == (me + 1) % 3)
+      {
+         System.out.println(other.name + " wins!");
+         this.losses++;
+         other.wins++;
+      } 
+      else
+      {
+         System.out.println(this.name + " wins!");
+         this.wins++;
+         other.losses++;
+      }
+   }
+}  
