@@ -11,6 +11,7 @@ public class Driver
          
          tournament.display();
          tournament.sort();
+         tournament.play();
          tournament.display();
     }
 }
