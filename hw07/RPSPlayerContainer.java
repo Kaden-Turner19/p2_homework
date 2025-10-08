@@ -1,7 +1,16 @@
+/**
+ * A player container for our rock, paper, scissors program
+ * 
+ *
+ * @author  Kaden Turner
+ * @version for P2
+ *
+*/
+
 public class RPSPlayerContainer
 {
-    private RPSPlayer[] players;  // array of players
-    private int numPlayers;       // number of players added so far
+    protected RPSPlayer[] players;  // array of players
+    protected int numPlayers;       // number of players added so far
 
     public RPSPlayerContainer()
     {
