@@ -125,7 +125,18 @@ public abstract class RPSPlayer
   */
    public int compareTo(RPSPlayer other)
    {
-      return this.name.compareTo(other.getName());
+      if(this.wins != other.wins)
+      {
+         return other.wins - this.wins;   // more wins means less in sort order
+      }
+      else if (this.losses != other.losses)
+      {
+         return this.losses - other.losses;  // fewer losses means better
+      }
+      else
+      {
+         return this.name.compareTo(other.name);
+      }
    }
 
 }  

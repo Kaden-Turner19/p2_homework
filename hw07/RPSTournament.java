@@ -6,12 +6,17 @@
  * @version for P2
  *
 */
-public class RPSTournament extends RPSPlayerContainer
+public abstract class RPSTournament extends RPSPlayerContainer
 {     
    public RPSTournament()
    {
       super();
    }
+   
+  /**
+    *  P lay method to set up tournament
+   */ 
+   public abstract void play();
       
   /**
    *  Sort method that will take the RPSPlayers and sort them by increasing order
@@ -35,21 +40,4 @@ public class RPSTournament extends RPSPlayerContainer
          players[min] = temp;
        }
     }
-      
-   /**
-    *  Play method that will instantiate a series of games
-   */
-   public void play()
-   {
-      int i, j;
-      int rounds = 5;
-        
-      for(i = 0;i < rounds;i++)
-      {
-         for(j = 0;j < numPlayers;j++)
-         {
-               players[i].fight(players[j]);
-         }
-      }
-   }   
 }
