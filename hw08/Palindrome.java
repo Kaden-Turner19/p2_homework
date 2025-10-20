@@ -1,45 +1,107 @@
 /**
- * A class that will take in input and determine whether the input is a palindrome
+ * reads a list of words and finds the amount of palindromes. displays stats as well
  *
  * @author  Kaden Turner
- * @version for P2 10/15/2025
- *
-*/
-import java.util.Scanner;
+ * @version for P2 10/17/2025
+ */
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.text.DecimalFormat;
 
-public class Palindrome
+public class Palindrome 
 {
-	public static void main(String [] args)
-	{  
-      if(args.length != 1)
-      {
-         System.out.println("Error: There are too many parameters passed, there should only be one.");
-      }  
-      else
-      {
-         System.out.println(isPalindrome(args[0]));
-      }
-	}
-   
-   /**
-    * Will take in a String parameter and determine whether or not its a palindrome
+   private String filename;
+
+   /**s
+    * constructor accepts the input file name
     *
-    * @Param word word to be checked
+    * @param filename name of the input file
+   */
+   public Palindrome(String filename)
+   {
+       this.filename = filename;
+   }
+
+   /**
+    * reads words from file, determines palindrome stats, and prints the results
+    */
+   public void processFile() 
+   {
+      int totalWords = 0;
+      int palindromeCount = 0;
+      CodeTimer timer = new CodeTimer();
+
+      timer.start();
+
+      try(BufferedReader reader = new BufferedReader(new FileReader(filename))) 
+      {
+         String word;
+            
+         while((word = reader.readLine()) != null)
+         {
+            word = word.trim();
+            if(!word.isEmpty())
+            {
+               totalWords++;
+               if(isPalindrome(word)) 
+               {
+                  palindromeCount++;
+               }
+            }
+         }
+       } 
+       catch(IOException e) 
+       {
+         System.out.println("Error reading file: " + e.getMessage());
+         return;
+       }
+
+       timer.stop();
+       double percent;
+        
+       if (totalWords > 0)
+       {
+         percent = (100.0 * palindromeCount / totalWords);
+       } 
+       else
+       {
+         percent = 0.0;
+       }
+
+       DecimalFormat df = new DecimalFormat("0.000");
+
+       System.out.println("+--------------------------------------------+");
+       System.out.println("Input File : " + filename);
+       System.out.println("Words Processed: " + totalWords);
+       System.out.println("# Palindromes : " + palindromeCount);
+       System.out.println("% Palindromes : " + df.format(percent) + "%");
+       System.out.println("Time Elapsed : " + df.format(timer.getElapsedSeconds()));
+       System.out.println("+--------------------------------------------+");
+   }
+
+  /**
+   * determines if the string is a palindrome.
+   *
+   * @param word word to check
+   * @return true if the word is a palindrome, else false
    */
    public static boolean isPalindrome(String word)
    {
-      if(word == null || word.length() == 0)
+      if(word == null || word.length() == 0) 
       {
          return false;
       }
-      
-      for(int i = 0;i<word.length() / 2;i++)
-      {
-         if(word.charAt(i) != word.charAt(word.length() - 1 - i))
-            return false;
-      }     
-      
-      return true;             
-   }
-}
 
+      word = word.toLowerCase();
+      for (int i = 0; i < word.length() / 2; i++) 
+      {
+         if (word.charAt(i) != word.charAt(word.length() - 1 - i)) 
+         {
+            return false;
+         }
+      }
+
+      return true;
+    }
+}
