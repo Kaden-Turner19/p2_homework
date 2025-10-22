@@ -1,0 +1,17 @@
+1. If I had to guess, I'd assume that the numbers above the images at the beginning would be the row and column dimensions
+
+UML Diagram
+
+=========================
+MyCanvas
+=========================
+- char[][] image
+- char borderChar
+- int rows
+- int cols
+=========================
++ void load(String filename)
++ void setBorder(char border)
++ void show()
++ void fill(char newChar, int row, int col)
+=========================
