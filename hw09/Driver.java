@@ -4,13 +4,12 @@
  * @author  Kaden Turner
  * @version for Program Design 2
  */
-
 public class Driver
 {
 	public static void main(String [] args)
 	{
 		MyCanvas canvas= new MyCanvas();
-      canvas.load("");
+      canvas.load("C:/Users/kylet/p2_homework/hw09/image2.txt");
       canvas.show();
       /**
 		canvas.load("image1.txt");
