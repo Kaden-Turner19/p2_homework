@@ -1,7 +1,7 @@
 /**
  * Demonstrates ASCII image filling algorithm.
  *
- * @author  Your Name Here
+ * @author  Kaden Turner
  * @version for Program Design 2
  */
 
@@ -10,7 +10,9 @@ public class Driver
 	public static void main(String [] args)
 	{
 		MyCanvas canvas= new MyCanvas();
-
+      canvas.load("");
+      canvas.show();
+      /**
 		canvas.load("image1.txt");
 		canvas.setBorder('1');
 		canvas.show();
@@ -41,5 +43,6 @@ public class Driver
 		canvas.fill(';',120,30);
 		canvas.fill(';',130,160);
 		canvas.show();
+      */
 	}
 }
