@@ -9,15 +9,13 @@ public class Driver
 	public static void main(String [] args)
 	{
 		MyCanvas canvas= new MyCanvas();
-      canvas.load("C:/Users/kylet/p2_homework/hw09/image2.txt");
-      canvas.show();
-      /**
+
 		canvas.load("image1.txt");
 		canvas.setBorder('1');
 		canvas.show();
 		canvas.fill('0',1,1);
 		canvas.show();
-
+      
 		canvas.load("image2.txt");
 		canvas.setBorder('*');
 		canvas.show();
@@ -42,6 +40,5 @@ public class Driver
 		canvas.fill(';',120,30);
 		canvas.fill(';',130,160);
 		canvas.show();
-      */
 	}
 }

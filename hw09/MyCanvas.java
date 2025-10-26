@@ -68,7 +68,44 @@ public class MyCanvas
             System.out.print(image[i][j]);
          }
          System.out.println();
+      }    
+   }
+   
+  /**
+   * fill method that will fill any open space with characters
+   *
+   * @param filler character to fill empty space with 
+   * @param i First coordinate in the 2D-array
+   * @param j Second coordinate in the 2D-array 
+   */
+   public void fill(char filler, int i, int j)
+   {      
+      if(i < 0 || i >= rows || j < 0 || j >= cols) //if the parameters are out of bounds then return
+      {
+         return;
       }
       
+      if(image[i][j] == borderChar || image[i][j] == filler)   //if the desired location is a border character or already the desired character then return
+      {
+         return;
+      }
+      
+      image[i][j] = filler;   //fill the initial square
+      
+      fill(filler, i-1, j);   //fill up
+      fill(filler, i, j-1);   //fill left
+      fill(filler, i, j+1);   //fill right
+      fill(filler, i+1,j);    //fill down
+      
+   }
+   
+  /**
+   * setBorder method that will set the border character
+   *
+   * @param b border character
+   */
+   public void setBorder(char b)
+   {
+      this.borderChar = b;
    }
 }
