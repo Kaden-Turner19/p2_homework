@@ -51,7 +51,17 @@ public class IntList
 	 */
 	public IntNode search(int val)
 	{
-		return null;
+      IntNode temp = head;
+      while(temp != null)
+      {
+         if(temp.data == val)
+         {
+            System.out.println(temp.data);
+            return temp;
+         }
+         temp = temp.next;
+      }
+      return null;
 	}
 
 	/**
@@ -61,5 +71,32 @@ public class IntList
 	 */
 	public void remove(int val)
 	{
-	}
+      IntNode q;
+      IntNode p = head;
+      
+      try
+      {
+         if(head.data == val)
+         {
+            head = p.next;    //Condition for if the value is first in list
+         }
+      
+         p = p.next;    //set the p IntNode one ahead of q
+         q = head;      //set the q IntNode one behind of p
+      
+         while(p != null)
+         {
+            if(p.data == val)
+            {
+               q.next = p.next;
+            }
+         p = p.next;
+         q = q.next;
+         }      
+	   }
+      catch(NullPointerException e)    //This will handle the case that head is null
+      {
+         System.out.println("The selected list is empty.");
+      }
+   }
 }
