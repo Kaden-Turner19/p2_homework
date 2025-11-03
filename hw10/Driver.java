@@ -10,6 +10,8 @@ public class Driver
 {
 	public static void main(String [] args)
 	{
+   
+      /*
       IntList list = new IntList();
       
       list.insert(10);
@@ -40,6 +42,19 @@ public class Driver
       System.out.println();
       
       list.remove(10);     //attempt to delete a value while the list is null
+      */
+      
+      //Code testing for the Homework 10
+      Word w1 = new Word("kaden");
+      Word w2 = new Word("gfedcba");
+      
+      System.out.println(w1);
+      System.out.println(w2);
+      
+      WordNode wn = new WordNode();
+      wn.data = "Kaden";
+      wn.next = new WordNode();
+      wn.next.data = "Turner";
 	}
 }
 
