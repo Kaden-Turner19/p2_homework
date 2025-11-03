@@ -1,18 +1,18 @@
 /**
- * A linked list of integer values.
+ * A linked list of String values.
  *
- * @author
- * @version
+ * @author  Kaden Turner
+ * @version 11/2/2025
  *
  */
-public class IntList
+public class WordList
 {
-	private IntNode head;
+	private WordNode head;
 
 	/**
 	 * A new list has head pointing nowhere.
 	 */
-	public IntList()
+	public WordList()
 	{
 		head = null;
 	}
@@ -22,7 +22,7 @@ public class IntList
 	 */
 	public void display()
 	{
-      IntNode cur = head;
+      WordNode cur = head;
       while(cur != null)
       {
          System.out.print(cur.data + " ");
@@ -35,20 +35,21 @@ public class IntList
 	 *
 	 * @param newdata The new element to be inserted into the list.
 	 */
-	public void insert(int newdata)
+	public void insert(String newdata)
 	{  
-      IntNode node = new IntNode();    //create new node
+      WordNode node = new WordNode();    //create new node
       node.data = newdata;             //store newdata into new node data  
       node.next = head;
       head = node;
 	}
+
+
 
 	/**
 	 * Search the list for the value val.
 	 *
 	 * @param val the value to be searched for
 	 * @return reference to the found node (null if not found)
-	 */
 	public IntNode search(int val)
 	{
       IntNode temp = head;
@@ -68,7 +69,6 @@ public class IntList
 	 * Find first occurrence of val (if it exists) and remove it from the list.
 	 *
 	 * @param val the value to be removed
-	 */
 	public void remove(int val)
 	{
       IntNode q;
@@ -99,4 +99,5 @@ public class IntList
          System.out.println("The selected list is empty.");
       }
    }
+   */
 }

@@ -55,6 +55,11 @@ public class Driver
       wn.data = "Kaden";
       wn.next = new WordNode();
       wn.next.data = "Turner";
+      
+      WordList wl = new WordList();
+      wl.insert("Kaden");
+      wl.insert("Turner");
+      wl.display();
 	}
 }
 
