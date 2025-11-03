@@ -5,61 +5,51 @@
  * @version
  *
  */
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class Driver
 {
 	public static void main(String [] args)
-	{
-   
-      /*
-      IntList list = new IntList();
-      
-      list.insert(10);
-      list.insert(15);
-      list.insert(20);     //testing for insert method
-      list.display();
-      
-      System.out.println();      
-      list.search(10);      
-      System.out.println();      //testing for search method
-      list.search(15);
-      System.out.println();
-      
-      list.remove(20);     //testing for remove method
-      list.display(); 
-      System.out.println();      //delete first instance in list
-      
-      list.insert(25);
-      list.remove(15);        //delete second instance in list
-      list.display();
-      System.out.println();
-      
-      list.remove(10);     //delete the last instance of the list
-      list.display();
-      System.out.println();
-      
-      list.remove(25);     //delete the last and only instance of the list
-      System.out.println();
-      
-      list.remove(10);     //attempt to delete a value while the list is null
-      */
-      
+	{ 
       //Code testing for the Homework 10
+      /*
       Word w1 = new Word("kaden");
-      Word w2 = new Word("gfedcba");
+      Word w2 = new Word("gfedcba");      //testing the word class to see functionality
       
-      System.out.println(w1);
+      System.out.println(w1);    
       System.out.println(w2);
       
       WordNode wn = new WordNode();
       wn.data = "Kaden";
-      wn.next = new WordNode();
+      wn.next = new WordNode();           //testing for the WordNode class 
       wn.next.data = "Turner";
       
       WordList wl = new WordList();
       wl.insert("Kaden");
-      wl.insert("Turner");
+      wl.insert("Turner");                //testing for the WordList class
       wl.display();
+      */
+      
+      try
+      {
+         BufferedReader bf;                  //declare the BufferedReader
+         String line;
+         WordList list = new WordList();
+      
+         bf = new BufferedReader(new FileReader("C:/Users/kylet/p2_homework/hw10/words.txt"));    //initialize the buffered reader to word.txt
+      
+         while((line = bf.readLine()) != null)
+         {
+            list.insert(line);
+         }
+         bf.close();
+      }
+      catch(IOException e)
+      {
+         System.out.println("Please select a valid file.");
+      }
 	}
 }
 
