@@ -7,7 +7,7 @@
  */
 public class WordNode 
 {
-	String data;
+	Word data;
 	WordNode next;
 }
 

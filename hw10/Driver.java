@@ -42,9 +42,10 @@ public class Driver
       
          while((line = bf.readLine()) != null)
          {
-            list.insert(line);
+            list.insert(new Word(line));
          }
          bf.close();
+         list.display();
       }
       catch(IOException e)
       {

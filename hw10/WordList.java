@@ -35,7 +35,7 @@ public class WordList
 	 *
 	 * @param newdata The new element to be inserted into the list.
 	 */
-	public void insert(String newdata)
+	public void insert(Word newdata)
 	{  
       WordNode node = new WordNode();    //create new node
       node.data = newdata;             //store newdata into new node data  
