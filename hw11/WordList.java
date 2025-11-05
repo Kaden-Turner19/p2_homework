@@ -42,23 +42,22 @@ public class WordList
       node.next = head;
       head = node;
 	}
-
-
-
+   
 	/**
-	 * Search the list for the value val.
+	 * Search the list for the Word w.
 	 *
-	 * @param val the value to be searched for
-	 * @return reference to the found node (null if not found)
-	public IntNode search(int val)
+	 * @param w the Word to be searched for
+	 * @return reference to the found Word (null if not found)
+    */
+	public Word search(Word w)
 	{
-      IntNode temp = head;
+      WordNode temp = head;
       while(temp != null)
       {
-         if(temp.data == val)
+         if(temp.data.equals(w))
          {
             System.out.println(temp.data);
-            return temp;
+            return temp.data;
          }
          temp = temp.next;
       }

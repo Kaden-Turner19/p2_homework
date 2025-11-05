@@ -13,13 +13,16 @@ public class Driver
 {
 	public static void main(String [] args)
 	{
-     Word w1 = new Word("hello");
-     Word w2 = new Word("hello");
-     Word w3 = new Word("Kaden");
-     
-     System.out.println(w1.equals(w2));
-     System.out.println(w1.equals(w3));
-   
+      WordList wl = new WordList();
+      wl.insert(new Word("hello"));
+      wl.insert(new Word("kaden"));
+      wl.insert(new Word("blinds"));
+      wl.insert(new Word("football"));
+      wl.display();
+      System.out.println("\n");
+            
+      wl.search(new Word("football"));
+      
    
     
       //Code testing for the Homework 10
