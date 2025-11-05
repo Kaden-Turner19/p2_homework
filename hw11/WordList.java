@@ -65,27 +65,28 @@ public class WordList
 	}
 
 	/**
-	 * Find first occurrence of val (if it exists) and remove it from the list.
+	 * Find first occurrence of w (if it exists) and remove it from the list.
 	 *
-	 * @param val the value to be removed
-	public void remove(int val)
+	 * @param w the Word to be removed
+    */
+	public void remove(Word w)
 	{
-      IntNode q;
-      IntNode p = head;
+      WordNode q;
+      WordNode p = head;
       
       try
       {
-         if(head.data == val)
+         if(head.data.equals(w))
          {
             head = p.next;    //Condition for if the value is first in list
          }
       
-         p = p.next;    //set the p IntNode one ahead of q
-         q = head;      //set the q IntNode one behind of p
+         p = p.next;    //set the p WordNode one ahead of q
+         q = head;      //set the q WordNode one behind of p
       
          while(p != null)
          {
-            if(p.data == val)
+            if(p.data.equals(w))
             {
                q.next = p.next;
             }
@@ -98,5 +99,4 @@ public class WordList
          System.out.println("The selected list is empty.");
       }
    }
-   */
 }

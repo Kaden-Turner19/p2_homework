@@ -23,6 +23,9 @@ public class Driver
             
       wl.search(new Word("football"));
       
+      System.out.println("\n");
+      wl.remove(new Word("kaden"));
+      wl.display();
    
     
       //Code testing for the Homework 10
