@@ -9,11 +9,7 @@ dogs
 cats
 hero
 coding
-nedak
 oreh
-reccos
-sgod
-riah
-hello
-plain
+listen
+silent
 gnidoc

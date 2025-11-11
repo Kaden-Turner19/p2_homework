@@ -60,4 +60,21 @@ public class Word
    {
       return this.word.hashCode();
    }
+   
+   /**
+    *  Checks to see if two words are anagrams
+    *
+    *  @param w Word object to compare to
+    */
+   public boolean anagramCheck(Word w)
+   {
+      if(this.sorted.equals(w.sorted))
+      {
+         return true;
+      }
+      else
+      {
+         return false;
+      }
+   }
 }

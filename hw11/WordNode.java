@@ -1,5 +1,5 @@
 /**
- * A linked list node holding String data.
+ * A linked list node holding word data.
  *
  * @author  Kaden Turner
  * @version 11/1/2025

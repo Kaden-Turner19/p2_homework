@@ -13,61 +13,18 @@ public class Driver
 {
 	public static void main(String [] args)
 	{
-      WordList wl = new WordList();
-      wl.insert(new Word("hello"));
-      wl.insert(new Word("kaden"));
-      wl.insert(new Word("blinds"));
-      wl.insert(new Word("football"));
-      wl.display();
-      System.out.println("\n");
-            
-      wl.search(new Word("football"));
-      
-      System.out.println("\n");
-      wl.remove(new Word("kaden"));
-      wl.display();
+      long startTime = System.currentTimeMillis();    //start time
    
-    
-      //Code testing for the Homework 10
-      /*
-      Word w1 = new Word("kaden");
-      Word w2 = new Word("gfedcba");      //testing the word class to see functionality
+      LinkedDictionary ld = new LinkedDictionary("C:/Users/kylet/p2_homework/data/mywords.txt");     //declare the linkeddictionary with the test file
       
-      System.out.println(w1);    
-      System.out.println(w2);
+      //System.out.println(ld.countAnagrams(new Word("silent")));         //testing for countAnagrams method
       
-      WordNode wn = new WordNode();
-      wn.data = "Kaden";
-      wn.next = new WordNode();           //testing for the WordNode class 
-      wn.next.data = "Turner";
+      ld.displayBigAnagramFamilies();     //testing for displayBigAnagramFamilies method
       
-      WordList wl = new WordList();
-      wl.insert("Kaden");
-      wl.insert("Turner");                //testing for the WordList class
-      wl.display();
-      */
-      /*
-      try
-      {
-         BufferedReader bf;                  //declare the BufferedReader
-         String line;
-         WordList list = new WordList();
+      long endTime = System.currentTimeMillis();      //end time
       
-         bf = new BufferedReader(new FileReader("C:/Users/kylet/p2_homework/hw10/words.txt"));    //initialize the buffered reader to word.txt
-      
-         while((line = bf.readLine()) != null)
-         {
-            list.insert(new Word(line));
-         }
-         bf.close();
-         list.display();
-      }
-      catch(IOException e)
-      {
-         System.out.println("Please select a valid file.");
-      }
-      */
-	}
-   
+      double totalTime = (endTime - startTime) / 1000.0;    //format time output
+      System.out.println("Total time: " + totalTime);    //print total time
+	}  
 }
 

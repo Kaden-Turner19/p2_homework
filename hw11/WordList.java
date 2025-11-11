@@ -1,5 +1,5 @@
 /**
- * A linked list of String values.
+ * A linked list of Word values.
  *
  * @author  Kaden Turner
  * @version 11/2/2025
@@ -7,7 +7,7 @@
  */
 public class WordList
 {
-	private WordNode head;
+	protected WordNode head;
 
 	/**
 	 * A new list has head pointing nowhere.
