@@ -13,24 +13,28 @@ import java.io.IOException;
 public class ArrayDictionary
 {
 
+   private Word[] data;
+   private int n = 0;
+
    /**
     * Read words from a file and insert into a list
     *
-    * @param f file to read from
-    */
-    
-   /* 
-   public ArrayDictionary(String f)
+    * @param file file to read from
+    */ 
+   public ArrayDictionary(String file)
    {
+      data = new Word[500000];
+      
       try
       {
          BufferedReader numFile;
          String str;
          
-         numFile = new BufferedReader(new FileReader(f));
+         numFile = new BufferedReader(new FileReader(file));
          while((str = numFile.readLine()) !=null)
          {
-            insert(new Word(str));
+            data[n] = (new Word(str));
+            n++;
          }
          
          numFile.close();
@@ -39,7 +43,6 @@ public class ArrayDictionary
       {
          System.out.println("Please enter a valid file name.");
       }
-   
    }
    
    /**
