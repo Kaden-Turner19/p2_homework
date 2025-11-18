@@ -12,13 +12,9 @@ import java.io.IOException;
 public class Driver
 {
 	public static void main(String [] args)
-	{
-   
-      Word w1 = new Word("listen");
-      Word w2 = new Word("silent");
-      Word w3 = new Word("kaden");
-      System.out.println(w1.compareTo(w2));
-      System.out.println(w1.compareTo(w3));
+	{     
+      ArrayDictionary ad = new ArrayDictionary("C:/Users/kylet/p2_homework/data/mywords.txt");
+      ad.display();
    
       /*
       long startTime = System.currentTimeMillis();    //start time
