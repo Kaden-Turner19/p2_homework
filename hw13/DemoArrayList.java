@@ -20,5 +20,21 @@ public class DemoArrayList
 		System.out.println(al.size());
 		System.out.println(al.get(0));
 		System.out.println(al.get(1));
+      System.out.println(al.indexOf("hi"));
+      
+      
+      ArrayList<Word> wl;
+      
+      wl = new ArrayList<Word>();
+      wl.add(new Word("Kaden"));
+      wl.add(new Word("Turner"));
+      wl.add(new Word("Football"));
+      System.out.println(wl.indexOf(new Word("Kaden")));    //should return 0
+      System.out.println(wl.get(1));                        //should return "Turner"
+      System.out.println(wl.size());      
+      wl.remove(new Word("Football"));
+      System.out.println(wl.size());
+      
+      
 	}
 }
