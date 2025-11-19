@@ -9,11 +9,10 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.ListIterator;
 
-public class ArrayDictionary {
-
-   private Word[] data;
-   private int n = 0;
+public class ArrayDictionary extends ArrayList<Word> {
 
    /**
     * Read words from a file and insert into a list
@@ -21,7 +20,6 @@ public class ArrayDictionary {
     * @param file file to read from
     */ 
    public ArrayDictionary(String file) {
-      data = new Word[500000];
       
       try {
          BufferedReader numFile;
@@ -30,8 +28,7 @@ public class ArrayDictionary {
          numFile = new BufferedReader(new FileReader(file));
          
          while((str = numFile.readLine()) !=null) {
-            data[n] = (new Word(str));
-            n++;
+            this.add(new Word(str));
          }
          
          numFile.close();
@@ -40,21 +37,31 @@ public class ArrayDictionary {
          System.out.println("Please enter a valid file name.");
       }
       
-      sort();
+      //sort();
    }
    
    /**
     * Displays the first 20 elements of the array
     */    
    public void display() {
-      for(int i = 0;i<20;i++) {
-         System.out.println(data[i]);
+      ListIterator<Word> li;
+      li = this.listIterator();
+      Word temp;
+      
+      while(li.hasNext()) {
+         temp = li.next();
+         System.out.println(temp);
       }
    }
    
+   
+   
+   
+   
+   
    /**
     * Helper sort class for qSort
-    */    
+    *    
    public void sort() {
       qSort(0,n-1);
    }
@@ -64,7 +71,7 @@ public class ArrayDictionary {
     *
     * @param p the start of the partition
     * @param r the end of the partition
-    */    
+    *  
    public void qSort(int p, int r) {
       int q;
       
@@ -81,7 +88,7 @@ public class ArrayDictionary {
     * @param a array of doubles to sort
     * @param p the start of the partition
     * @param r the end of the partition
-    */    
+    *    
    public int partition(int p, int r) {
       int i, j;
       Word pivot = data[p];     //the first element in the partition
@@ -102,12 +109,7 @@ public class ArrayDictionary {
          data[j] = temp;
       } 
    }
-   
-   
-   
-   
-   
-   
+    
    /**
     * Read through the list and return the count of w's anagrams
     *
