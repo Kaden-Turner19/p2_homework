@@ -14,22 +14,27 @@ public class Driver
 	public static void main(String [] args)
 	{     
       ArrayDictionary ad = new ArrayDictionary("C:/Users/kylet/p2_homework/data/mywords.txt");
-      ad.display();
-   
-      /*
+      
+      //System.out.println(ad.countAnagrams(new Word("soccer")));      //testing with small file
+      //System.out.println(ad.countAnagrams(new Word("listen")));
+      
       long startTime = System.currentTimeMillis();    //start time
-   
-      LinkedDictionary ld = new LinkedDictionary("C:/Users/kylet/p2_homework/data/mywords.txt");     //declare the linkeddictionary with the test file
       
-      //System.out.println(ld.countAnagrams(new Word("silent")));         //testing for countAnagrams method
+      System.out.println(ad.countAnagrams(new Word("aaa")));
+      System.out.println(ad.countAnagrams(new Word("abduction")));
+      System.out.println(ad.countAnagrams(new Word("xyz")));
+      System.out.println(ad.countAnagrams(new Word("uio")));
+      System.out.println(ad.countAnagrams(new Word("silent")));
+      System.out.println(ad.countAnagrams(new Word("hero")));
+      System.out.println(ad.countAnagrams(new Word("jjj")));
+      System.out.println(ad.countAnagrams(new Word("long")));
+      System.out.println(ad.countAnagrams(new Word("pole")));
       
-      ld.displayBigAnagramFamilies();     //testing for displayBigAnagramFamilies method
       
       long endTime = System.currentTimeMillis();      //end time
       
       double totalTime = (endTime - startTime) / 1000.0;    //format time output
       System.out.println("Total time: " + totalTime);    //print total time
-      */
 	}  
 }
 
