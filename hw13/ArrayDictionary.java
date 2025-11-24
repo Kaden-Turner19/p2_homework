@@ -41,21 +41,6 @@ public class ArrayDictionary extends ArrayList<Word> {
    }
    
    /**
-    * Displays the first 20 elements of the array
-    *   
-   public void display() {
-      ListIterator<Word> li;
-      li = this.listIterator();
-      Word temp;
-      
-      while(li.hasNext()) {
-         temp = li.next();
-         System.out.println(temp);
-      }
-   }
-   **/
-   
-   /**
     * Helper sort class for qSort
     */    
    private void sort() {
@@ -172,6 +157,7 @@ public class ArrayDictionary extends ArrayList<Word> {
     * @param a array of doubles to sort
     * @param p the start of the partition
     * @param r the end of the partition
+    * @returns the split point
     */  
    public int partition(int p, int r) {
       int i, j;
