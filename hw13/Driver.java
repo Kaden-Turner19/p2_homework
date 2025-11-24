@@ -14,7 +14,12 @@ public class Driver
 	public static void main(String [] args)
 	{     
       ArrayDictionary ad = new ArrayDictionary("C:/Users/kylet/p2_homework/data/mywords.txt");
-      ad.display();
+      //ad.display();
+      
+      //System.out.println(ad.countAnagrams(new Word("soccer")));      //testing with small file
+      //System.out.println(ad.countAnagrams(new Word("listen")));
+      
+      ad.displayBigAnagramFamilies();
    
       /*
       long startTime = System.currentTimeMillis();    //start time

@@ -42,7 +42,7 @@ public class DemoArrayList
       }
       
       
-      /*
+      /*a
       System.out.println(wl.indexOf(new Word("Kaden")));    //should return 0
       System.out.println(wl.get(1));                        //should return "Turner"
       System.out.println(wl.size());      

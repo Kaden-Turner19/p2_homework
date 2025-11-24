@@ -37,12 +37,12 @@ public class ArrayDictionary extends ArrayList<Word> {
          System.out.println("Please enter a valid file name.");
       }
       
-      //sort();
+      sort();
    }
    
    /**
     * Displays the first 20 elements of the array
-    */    
+    *   
    public void display() {
       ListIterator<Word> li;
       li = this.listIterator();
@@ -53,25 +53,109 @@ public class ArrayDictionary extends ArrayList<Word> {
          System.out.println(temp);
       }
    }
-   
-   
-   
-   
-   
+   **/
    
    /**
     * Helper sort class for qSort
-    *    
-   public void sort() {
-      qSort(0,n-1);
+    */    
+   private void sort() {
+      qSort(0,this.size() - 1);
+   }
+    
+   /**
+    * Read through the list and return the count of w's anagrams
+    *
+    * @param w value to compare and find anagrams for
+    * @return the number of anagrams
+    */
+   public int countAnagrams(Word w) {
+      int index = binSearch(w);
+      if (index == -1) {
+         return 0;
+      }
+
+      int count = 1;
+
+      for (int i = index - 1; i >= 0; i--) {
+         if (w.anagramCheck(this.get(i))) {
+            count++;
+         } else {
+            break;
+         }
+      }
+
+      for (int i = index + 1; i < this.size(); i++) {
+         if (w.anagramCheck(this.get(i))) {
+            count++;
+         } else {
+            break;
+         }
+      }
+
+      return count;
    }
    
+   /**
+    * Display each word that has more than 6 anagrams
+    */
+   public void displayBigAnagramFamilies() {
+      for (int i = 0;i < this.size();i++) {
+         int count = 0;
+         
+         for (int j = 0;j < this.size();j++) {
+            if (this.get(i).anagramCheck(this.get(j))) {
+               count++;
+            }
+         }
+         
+         if (count >= 7) {
+            System.out.println(this.get(i));
+            System.out.println(count);
+         }
+      }
+   }
+   
+   /**
+    * Performs a binary search and returns -1 if its not there
+    *
+    * @param w the Word to search for
+    * @return index of a matching Word or -1
+    */
+   private int binSearch(Word w) {
+      return binSearchHelper(w, 0, this.size() - 1);
+   }
+
+   /**
+    * Helper method that helps with recursion
+    *
+    * @param val the Word to search for
+    * @param left left boundary of search range
+    * @param right right boundary of search range
+    * @return index where found or -1
+    */
+   private int binSearchHelper(Word val, int left, int right) {
+      if (left > right) {
+         return -1;
+      }
+      int mid = (left + right) / 2;
+      Word midWord = this.get(mid);
+
+      if (val.compareTo(midWord) == 0) {
+         return mid;
+      }
+      else if (val.compareTo(midWord) < 0) {
+         return binSearchHelper(val, left, mid - 1);
+      }
+      else
+         return binSearchHelper(val, mid + 1, right);
+   }
+      
    /**
     * Quick sort method that sorts an array
     *
     * @param p the start of the partition
     * @param r the end of the partition
-    *  
+    */
    public void qSort(int p, int r) {
       int q;
       
@@ -88,79 +172,25 @@ public class ArrayDictionary extends ArrayList<Word> {
     * @param a array of doubles to sort
     * @param p the start of the partition
     * @param r the end of the partition
-    *    
+    */  
    public int partition(int p, int r) {
       int i, j;
-      Word pivot = data[p];     //the first element in the partition
+      Word pivot = this.get(p);     //the first element in the partition
       
       i = p-1; //i is the left pointer
       j = r+1; //j is the rigth pointer
       
       while(true) {
-         do {j--;} while (data[j].compareTo(pivot) > 0);  //move the right pointer
-         do {i++;} while (data[i].compareTo(pivot) < 0);  //move the left pointer
+         do {j--;} while (this.get(j).compareTo(pivot) > 0);  //move the right pointer
+         do {i++;} while (this.get(i).compareTo(pivot) < 0);  //move the left pointer
          
          if(i >= j) {
             return j;
          }
          
-         Word temp = data[i];
-         data[i] = data[j];
-         data[j] = temp;
+         Word temp = this.get(i);
+         this.set(i, this.get(j));
+         this.set(j, temp);
       } 
    }
-    
-   /**
-    * Read through the list and return the count of w's anagrams
-    *
-    * @param w value to compare and find anagrams for
-    
-   public int countAnagrams(Word w)
-   {
-      int count = 0;
-      WordNode c = head;
-      
-      while(c != null)
-      {
-         if(w.anagramCheck(c.data) == true)
-         {
-            count++;
-         }
-         c = c.next;
-      }
-      
-      return count;
-   }
-   
-   /**
-    * Display each word that has more than 6 anagrams
-    
-   public void displayBigAnagramFamilies()
-   {
-      WordNode cur = head;
-      
-      while(cur != null)
-      {
-         WordNode test = head;
-         int count = 0;
-         
-         while(test != null)
-         {
-            if(cur.data.anagramCheck(test.data))
-            {
-               count++;
-            }
-            
-            test = test.next;
-         }
-         if(count >= 6)
-         {
-            System.out.println(cur.data);
-            System.out.println(count);
-         }
-         
-         cur = cur.next;
-      }
-   }
-   */
 }
