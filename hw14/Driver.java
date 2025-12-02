@@ -1,8 +1,8 @@
 /**
  * Driver for testing MyStack.
  *
- * @author
- * @version
+ * @author  Kaden Turner
+ * @version 12/2/2025
  *
  */
 
@@ -18,7 +18,7 @@ public class Driver
 		s.push(25);
 		s.push(12);
 
-		while (!s.empty())
+		while (!s.isEmpty())
 			System.out.println(s.pop());
 
 	}
