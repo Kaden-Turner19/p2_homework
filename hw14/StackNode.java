@@ -7,6 +7,6 @@
  */
  
 public class StackNode {
-   int data;
+   String data;
    StackNode next;
 }
