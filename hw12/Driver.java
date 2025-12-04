@@ -15,21 +15,9 @@ public class Driver
 	{     
       ArrayDictionary ad = new ArrayDictionary("C:/Users/kylet/p2_homework/data/mywords.txt");
       
-      //System.out.println(ad.countAnagrams(new Word("soccer")));      //testing with small file
-      //System.out.println(ad.countAnagrams(new Word("listen")));
-      
       long startTime = System.currentTimeMillis();    //start time
       
-      System.out.println(ad.countAnagrams(new Word("aaa")));
-      System.out.println(ad.countAnagrams(new Word("abduction")));
-      System.out.println(ad.countAnagrams(new Word("xyz")));
-      System.out.println(ad.countAnagrams(new Word("uio")));
-      System.out.println(ad.countAnagrams(new Word("silent")));
-      System.out.println(ad.countAnagrams(new Word("hero")));
-      System.out.println(ad.countAnagrams(new Word("jjj")));
-      System.out.println(ad.countAnagrams(new Word("long")));
-      System.out.println(ad.countAnagrams(new Word("pole")));
-      
+      ad.displayBigAnagramFamilies();
       
       long endTime = System.currentTimeMillis();      //end time
       
