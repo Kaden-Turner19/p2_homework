@@ -9,7 +9,7 @@
  */
 import java.util.Arrays;
 
-public class Word
+public class Word implements Comparable<Word>
 {
 	private String word;    // the word
 	private String sorted;  // the word re-arranged so that its letters are sorted
