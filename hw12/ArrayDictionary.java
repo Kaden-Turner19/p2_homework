@@ -137,26 +137,42 @@ public class ArrayDictionary {
     * Display each word that has more than 6 anagrams
     */
    public void displayBigAnagramFamilies() {
-    int count = 1;
-    int numberOfFamilies = 0;
-
-    for (int i = 1; i <= n; i++) {        //loop through the array
-        if (i < n && data[i].compareTo(data[i - 1]) == 0) {    //continue to go through if the words are the same
-            count++;    
-        }
-        else {
-            if (count >= 6) {    //check to see if the family contains 7 or more
-                System.out.println("Family = " + count);    //just to make it look organized
-
-                for (int j = i - count; j < i; j++) {       // loop through the family and print the data
-                    System.out.println(data[j]);
+      
+      int count;
+      int numberOfFamilies = 0;                             //int to hold the count of families
+      
+      for(int i = 0;i<n;i++) {                              //loops through each word
+         count = countAnagrams(data[i]);                //counts the number of anagrams for the selected word using binary search within countAnagrams
+         
+         if(count >= 6) {                                   //if that count is greater than or equal to 6 than its considered a big family
+            numberOfFamilies++;                             //increase the counter
+            
+            System.out.println("Family = " + (count + 1));  //print out the size of the family
+            System.out.println(data[i]);                    //print out the main word
+            
+            for (int left = i - 1; left >= 0; left--) {     //logic to print left of the desired word, starting one left of the word
+                if (data[i].anagramCheck(data[left])) {     //check if its an anagram
+                    System.out.println(data[left]);         //print the word if it is an anagram
+                } else {
+                    break;                                  //if not than break out of the loop
                 }
-                numberOfFamilies++;
             }
-            count = 1;     //reset the counter
+            
+            int skipRight = 0;
+            for (int right = i + 1; right < n; right++) {   //logic to print the right side, starting one to the right
+                if (data[i].anagramCheck(data[right])) {    //check if its an anagram
+                    System.out.println(data[right]);        //print if it is
+                    skipRight++;                            //counts how far the family goes to the right
+                } else {
+                    break;                                  //if not than break the loop
+                }
+            }
+            i = i + skipRight;                              //moves i forward past the family of anagrams, 
+                                                            //prevents printing the same family again
          }
       }
-      System.out.println("Number of Families = " + numberOfFamilies);
+   
+      System.out.println("Number of Families = " + numberOfFamilies);   //prints the number of families found
    }
    
    /**
